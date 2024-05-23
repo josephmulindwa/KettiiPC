@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c752yjo0wfp2c"]
+
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="1_y101k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr26c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qj63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2q1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16hxg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msqph"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.745098, 0.745098, 0.745098, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 0.392157)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 56
+Button/fonts/font = ExtResource("1_y101k")
+Button/styles/disabled = SubResource("StyleBoxEmpty_hr26c")
+Button/styles/focus = SubResource("StyleBoxEmpty_8qj63")
+Button/styles/hover = SubResource("StyleBoxEmpty_x2q1j")
+Button/styles/normal = SubResource("StyleBoxEmpty_16hxg")
+Button/styles/pressed = SubResource("StyleBoxEmpty_msqph")

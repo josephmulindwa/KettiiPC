@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxblihhw51h1g"]
+
+[ext_resource type="Texture2D" uid="uid://cpot4qcln4hut" path="res://Sprites/Flare.png" id="1_46rdg"]
+[ext_resource type="Script" path="res://Scripts/Flare.gd" id="2_4875e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2oyt"]
+radius = 142.0
+
+[node name="Flare" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("1_46rdg")
+expand_mode = 1
+script = ExtResource("2_4875e")
+
+[node name="Area2D" type="Area2D" parent="." groups=["flare"]]
+position = Vector2(150, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b2oyt")

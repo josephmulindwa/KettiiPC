@@ -1,0 +1,7 @@
+- no special characters/ emojis
+- no all caps in name
+- no misleading text
+- no "Free" or "Discount"
+- no ranking
+- no "Editor's Choice", "New"
+- Ensure app installs, & low ANR

@@ -1,0 +1,852 @@
+[gd_scene load_steps=31 format=3 uid="uid://ds03gs7vwlyi7"]
+
+[ext_resource type="Script" path="res://Scripts/LobbyHandler.gd" id="1_48bmk"]
+[ext_resource type="Script" path="res://Scripts/LobbyNameHandler.gd" id="2_rconw"]
+[ext_resource type="LabelSettings" uid="uid://co35nvxgodayu" path="res://Themes/normal_label_settings_72.tres" id="4_vk13s"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="5_3buve"]
+[ext_resource type="Theme" uid="uid://dxsk080uwrgs2" path="res://Themes/back_button_theme.tres" id="5_f87ll"]
+[ext_resource type="Script" path="res://Scripts/LobbyControlLayer.gd" id="5_j3fw1"]
+[ext_resource type="Theme" uid="uid://6bfv0x6ge38r" path="res://Themes/text_edit_theme.tres" id="6_675rg"]
+[ext_resource type="Theme" uid="uid://cdmflckw8cw2g" path="res://Themes/arrow_prev_texture_button_theme.tres" id="6_a6ivk"]
+[ext_resource type="Theme" uid="uid://cvw4xctkkuhop" path="res://Themes/close_button_theme.tres" id="6_iev21"]
+[ext_resource type="PackedScene" uid="uid://bilova07og8dh" path="res://Prefabs/long_button.tscn" id="7_52x7q"]
+[ext_resource type="Theme" uid="uid://bpa2h0wbmuby5" path="res://Themes/arrow_next_texture_button_theme.tres" id="7_k15j0"]
+[ext_resource type="Texture2D" uid="uid://vw0whengynq1" path="res://Sprites/RoundEdgeRect32.png" id="8_bnoln"]
+[ext_resource type="LabelSettings" uid="uid://cwhyfrg8lcq55" path="res://Themes/normal_label_settings_36.tres" id="9_et4oi"]
+[ext_resource type="LabelSettings" uid="uid://nmsorndsjpd7" path="res://Themes/button_medium_label_settings.tres" id="9_fjkq6"]
+[ext_resource type="Script" path="res://Scripts/GameCodeInputHandler.gd" id="10_cyhdl"]
+[ext_resource type="Texture2D" uid="uid://bltdima5nqbbx" path="res://Sprites/MenuPanelPurple.png" id="11_v8lmo"]
+[ext_resource type="PackedScene" uid="uid://jgo2vv8310fb" path="res://Prefabs/player_list_panel.tscn" id="11_y3p6m"]
+[ext_resource type="Script" path="res://Scripts/NumberPlayersLobbyHandler.gd" id="12_frm60"]
+[ext_resource type="Script" path="res://Scripts/LobbyPopupHandler.gd" id="16_gkm8w"]
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="18_356yn"]
+[ext_resource type="Script" path="res://Scripts/SlideHandler.gd" id="18_l68ga"]
+[ext_resource type="Script" path="res://Scripts/RandomGameHandler.gd" id="20_d6wtx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_37oba"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_4e3wd"]
+font_size = 58
+
+[sub_resource type="LabelSettings" id="LabelSettings_g01f4"]
+font_size = 44
+
+[sub_resource type="LabelSettings" id="LabelSettings_84b2r"]
+font = ExtResource("18_356yn")
+font_size = 48
+font_color = Color(0.572549, 0.827451, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_057vg"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0wtb"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_xognv"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_3qou2"]
+font_size = 32
+
+[node name="LobbyNode2D" type="Node2D"]
+
+[node name="LobbyLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_48bmk")
+
+[node name="Background" type="ColorRect" parent="LobbyLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.027451, 0.164706, 0.784314, 1)
+
+[node name="NameControl" type="Control" parent="LobbyLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_rconw")
+
+[node name="NamePanel" type="NinePatchRect" parent="LobbyLayer/NameControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 250)
+texture = ExtResource("11_v8lmo")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="TitleLabel" type="Label" parent="LobbyLayer/NameControl/NamePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter  Name"
+label_settings = ExtResource("4_vk13s")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_ENTER_NAME"])
+
+[node name="WarnLabel" type="Label" parent="LobbyLayer/NameControl/NamePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -110.0
+offset_right = 180.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(180, 24)
+label_settings = SubResource("LabelSettings_37oba")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_INVALID_GAME_CODE"])
+
+[node name="NameFieldParent" type="NinePatchRect" parent="LobbyLayer/NameControl/NamePanel"]
+self_modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -50.0
+offset_right = 280.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 50)
+texture = ExtResource("8_bnoln")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="NameField" type="TextEdit" parent="LobbyLayer/NameControl/NamePanel/NameFieldParent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -50.0
+offset_right = 240.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 50)
+theme = ExtResource("6_675rg")
+language = "en_GB"
+
+[node name="ContinueButton" parent="LobbyLayer/NameControl/NamePanel" instance=ExtResource("7_52x7q")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 200.0
+pivot_offset = Vector2(200, 55)
+
+[node name="Label" parent="LobbyLayer/NameControl/NamePanel/ContinueButton" index="0"]
+text = "Continue"
+translate_keys = Array[String](["T_CONTINUE"])
+
+[node name="FeatureMessage" type="Label" parent="LobbyLayer/NameControl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -470.0
+offset_right = 410.0
+offset_bottom = -310.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(410, 80)
+text = "This feature allows you to play with friends that are on the same network as you."
+label_settings = ExtResource("9_et4oi")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_FEATURE_FUNCTIONALITY_MESSAGE"])
+display_format = "SENTENCE"
+
+[node name="LobbyControl" type="Control" parent="LobbyLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_j3fw1")
+
+[node name="SlideControl" type="Control" parent="LobbyLayer/LobbyControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_l68ga")
+slide_speed = 0.2
+
+[node name="WelcomeLabel" type="Label" parent="LobbyLayer/LobbyControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -840.0
+offset_right = 459.0
+offset_bottom = -740.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(430, 50)
+text = "Hello Player 58
+"
+label_settings = ExtResource("9_fjkq6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_HELLO_ENUM"])
+display_format = "CAMELF"
+
+[node name="StatusLabel" type="Label" parent="LobbyLayer/LobbyControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -735.0
+offset_right = 240.0
+offset_bottom = -645.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 45)
+text = "Select an option"
+label_settings = SubResource("LabelSettings_4e3wd")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_SELECT_AN_OPTION"])
+display_format = "SENTENCE"
+
+[node name="NoticeLabel" type="Label" parent="LobbyLayer/LobbyControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -630.0
+offset_right = 320.0
+offset_bottom = -562.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 34)
+text = "Invite other players"
+label_settings = SubResource("LabelSettings_g01f4")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_INVITE_OTHER_PLAYERS"])
+display_format = "SENTENCE"
+
+[node name="NinePatchPanelInvite" parent="LobbyLayer/LobbyControl" instance=ExtResource("11_y3p6m")]
+layout_mode = 1
+
+[node name="NinePatchPanelJoin" parent="LobbyLayer/LobbyControl" instance=ExtResource("11_y3p6m")]
+layout_mode = 1
+offset_left = 460.0
+offset_right = 1310.0
+
+[node name="NinePatchPanelRandom" parent="LobbyLayer/LobbyControl" instance=ExtResource("11_y3p6m")]
+layout_mode = 1
+offset_left = 1345.0
+offset_right = 2195.0
+
+[node name="OptionControl" type="Control" parent="LobbyLayer/LobbyControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.0
+offset_top = 590.0
+offset_right = 389.0
+offset_bottom = 710.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(310, 60)
+
+[node name="ArrowLeftButton" type="Button" parent="LobbyLayer/LobbyControl/OptionControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 120.0
+offset_bottom = 60.0
+grow_vertical = 2
+pivot_offset = Vector2(60, 60)
+size_flags_horizontal = 3
+theme = ExtResource("6_a6ivk")
+
+[node name="OptionButton" parent="LobbyLayer/LobbyControl/OptionControl" instance=ExtResource("7_52x7q")]
+layout_mode = 1
+offset_left = -210.0
+offset_top = -55.0
+offset_right = 210.0
+offset_bottom = 55.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="LobbyLayer/LobbyControl/OptionControl/OptionButton" index="0"]
+text = "Invite"
+translate_keys = Array[String](["T_INVITE"])
+font_size_ratios = {
+"HI": 0.9
+}
+
+[node name="ArrowRightButton" type="Button" parent="LobbyLayer/LobbyControl/OptionControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -60.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(60, 60)
+size_flags_horizontal = 3
+theme = ExtResource("7_k15j0")
+
+[node name="BackButton" type="Button" parent="LobbyLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -200.0
+offset_right = 188.0
+offset_bottom = -60.0
+grow_vertical = 0
+pivot_offset = Vector2(70, 70)
+theme = ExtResource("5_f87ll")
+
+[node name="PopupControl" type="Control" parent="LobbyLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_gkm8w")
+
+[node name="Background" type="ColorRect" parent="LobbyLayer/PopupControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.572549)
+
+[node name="NumberPlayersControl" type="Control" parent="LobbyLayer/PopupControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_frm60")
+
+[node name="NinePatchPanel" type="NinePatchRect" parent="LobbyLayer/PopupControl/NumberPlayersControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 250)
+texture = ExtResource("11_v8lmo")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="CheckBoxParent_2" type="Control" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -160.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckBox" type="CheckBox" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/CheckBoxParent_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -12.0
+offset_right = -126.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(12, 12)
+
+[node name="Label" type="Label" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/CheckBoxParent_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 160.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(125, 35)
+text = "2 PLAYERS
+"
+label_settings = SubResource("LabelSettings_84b2r")
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_2_PLAYERS"])
+
+[node name="CheckBoxParent_3" type="Control" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckBox" type="CheckBox" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/CheckBoxParent_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -12.0
+offset_right = -126.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(12, 12)
+
+[node name="Label" type="Label" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/CheckBoxParent_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 160.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(125, 35)
+text = "3  PLAYERS
+"
+label_settings = SubResource("LabelSettings_84b2r")
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_3_PLAYERS"])
+
+[node name="CheckBoxParent_4" type="Control" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckBox" type="CheckBox" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/CheckBoxParent_4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -12.0
+offset_right = -126.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(12, 12)
+
+[node name="Label" type="Label" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/CheckBoxParent_4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 160.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(125, 35)
+text = "4 PLAYERS
+"
+label_settings = SubResource("LabelSettings_84b2r")
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_4_PLAYERS"])
+
+[node name="ContinueButton" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel" instance=ExtResource("7_52x7q")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = 100.0
+offset_right = 200.0
+offset_bottom = 210.0
+pivot_offset = Vector2(200, 55)
+
+[node name="Label" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/ContinueButton" index="0"]
+text = "Continue"
+translate_keys = Array[String](["T_CONTINUE"])
+
+[node name="CloseButton" type="Button" parent="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("6_iev21")
+
+[node name="GameCodeInputControl" type="Control" parent="LobbyLayer/PopupControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_cyhdl")
+
+[node name="NinePatchPanel" type="NinePatchRect" parent="LobbyLayer/PopupControl/GameCodeInputControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 250)
+texture = ExtResource("11_v8lmo")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="TitleLabel" type="Label" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -200.0
+offset_right = 260.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(260, 47)
+text = "Enter  Game Code"
+label_settings = SubResource("LabelSettings_057vg")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_ENTER_GAME_CODE"])
+
+[node name="WarnLabel" type="Label" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -110.0
+offset_right = 180.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(180, 24)
+label_settings = SubResource("LabelSettings_y0wtb")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_INVALID_GAME_CODE"])
+
+[node name="GameCodeFieldParent" type="NinePatchRect" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel"]
+self_modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -50.0
+offset_right = 280.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 50)
+texture = ExtResource("8_bnoln")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="GameCodeField" type="TextEdit" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel/GameCodeFieldParent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -50.0
+offset_right = 240.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 50)
+theme = ExtResource("6_675rg")
+placeholder_text = "----"
+language = "en_GB"
+
+[node name="ContinueButton" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel" instance=ExtResource("7_52x7q")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 200.0
+pivot_offset = Vector2(200, 55)
+
+[node name="Label" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel/ContinueButton" index="0"]
+text = "Continue"
+translate_keys = Array[String](["T_CONTINUE"])
+
+[node name="CloseButton" type="Button" parent="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("6_iev21")
+
+[node name="RandomGameControl" type="Control" parent="LobbyLayer/PopupControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("20_d6wtx")
+
+[node name="NinePatchPanel" type="NinePatchRect" parent="LobbyLayer/PopupControl/RandomGameControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 250)
+texture = ExtResource("11_v8lmo")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="TitleLabel" type="Label" parent="LobbyLayer/PopupControl/RandomGameControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -133.0
+offset_right = 260.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(260, 47)
+text = "Join Random Session"
+label_settings = SubResource("LabelSettings_xognv")
+horizontal_alignment = 1
+script = ExtResource("5_3buve")
+translate_keys = Array[String](["T_JOIN_RANDOM_SESSION"])
+font_size_ratios = {
+"FR": 0.95,
+"IT": 0.95,
+"PT": 0.94
+}
+
+[node name="StatusLabel" type="Label" parent="LobbyLayer/PopupControl/RandomGameControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -24.0
+offset_right = 180.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(180, 24)
+label_settings = SubResource("LabelSettings_3qou2")
+horizontal_alignment = 1
+script = ExtResource("5_3buve")
+
+[node name="ContinueButton" parent="LobbyLayer/PopupControl/RandomGameControl/NinePatchPanel" instance=ExtResource("7_52x7q")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -161.0
+offset_right = 200.0
+offset_bottom = -51.0
+grow_vertical = 0
+pivot_offset = Vector2(200, 55)
+
+[node name="Label" parent="LobbyLayer/PopupControl/RandomGameControl/NinePatchPanel/ContinueButton" index="0"]
+text = "Continue"
+translate_keys = Array[String](["T_CONTINUE"])
+
+[node name="CloseButton" type="Button" parent="LobbyLayer/PopupControl/RandomGameControl/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("6_iev21")
+
+[editable path="LobbyLayer/NameControl/NamePanel/ContinueButton"]
+[editable path="LobbyLayer/LobbyControl/OptionControl/OptionButton"]
+[editable path="LobbyLayer/PopupControl/NumberPlayersControl/NinePatchPanel/ContinueButton"]
+[editable path="LobbyLayer/PopupControl/GameCodeInputControl/NinePatchPanel/ContinueButton"]
+[editable path="LobbyLayer/PopupControl/RandomGameControl/NinePatchPanel/ContinueButton"]

@@ -1,0 +1,779 @@
+{
+	"T_GAME_OVER":{
+		"EN":"Game over",
+		"FR":"Jeu terminé",
+		"HI":"खेल खत्म",
+		"IT":"Game Over",
+		"SP":"Juego terminado",
+		"JP":"ゲームオーバー",
+		"AR":"انتهت اللعبة",
+		"PT":"Game Over"
+	},
+	"T_COMPUTER":{
+		"EN":"computer",
+		"FR":"ordinateur",
+		"HI":"कंप्यूटर",
+		"IT":"computer",
+		"SP":"computadora",
+		"JP":"コンピュータ",
+		"AR":"كمبيوتر",
+		"PT":"Computador"
+	},
+	"T_TABLE":{
+		"EN":"table",
+		"FR":"table",
+		"HI":"तालिका",
+		"IT":"tavolo",
+		"SP":"mesa",
+		"JP":"テーブル",
+		"AR":"طاولة",
+		"PT":"Mesa"
+	},
+	"T_ONLINE":{
+		"EN":"online",
+		"FR":"en ligne",
+		"HI":"ऑनलाइन",
+		"IT":"online",
+		"SP":"en línea",
+		"JP":"オンライン",
+		"AR":"على الانترنت",
+		"PT":"Online"
+	},
+	"T_LAN":{
+		"EN": "LAN",
+		"JP": "LAN",
+		"PT": "LAN",
+		"IT": "LAN",
+		"AR": "شبكة محلية",
+		"SP": "LAN",
+		"FR": "LAN",
+		"HI": "लैन"
+	 },
+	"T_TUTORIALS":{
+		"EN":"tutorials",
+		"FR":"tutoriels",
+		"HI":"शिक्षण",
+		"IT":"tutorial",
+		"SP":"tutoriales",
+		"JP":"チュートリアル",
+		"AR":"البرامج التعليمية",
+		"PT":"Tutoriais"
+	},
+	"T_LANGUAGES":{
+		"EN":"languages",
+		"FR":"langues",
+		"HI":"भाषाएँ",
+		"IT":"lingue",
+		"SP":"idiomas",
+		"JP":"言語",
+		"AR":"اللغات",
+		"PT":"Idiomas"
+	},
+	"T_FEEDBACK":{
+		"EN":"Feedback",
+		"FR":"Retour",
+		"HI":"प्रतिसाद",
+		"IT":"Feedback",
+		"SP":"Comentarios",
+		"JP":"フィードバック",
+		"AR":"ردود الفعل",
+		"PT":"Feedback"
+	},
+	"T_RATE_US":{
+		"EN":"rate us",
+		"FR":"évaluez-nous",
+		"HI":"हमें रेट करें",
+		"IT":"valutaci",
+		"SP":"califícanos",
+		"JP":"評価する",
+		"AR":"قيمنا",
+		"PT":"Avalie-nos"
+	},
+	"T_INVITE":{
+		"EN":"Invite",
+		"FR":"Inviter",
+		"HI":"आमंत्रित करें",
+		"IT":"Invita",
+		"SP":"Invitar",
+		"JP":"招待する",
+		"AR":"دعوة", 
+		"PT":"Convidar"
+	},
+	"T_JOIN":{
+		"EN":"Join",
+		"FR":"Rejoindre",
+		"HI":"शामिल हों",
+		"IT":"Unirsi",
+		"SP":"Unirse",
+		"JP":"参加する",
+		"AR":"الانضمام",
+		"PT":"Entrar"
+	},
+	"T_ABOUT_US":{
+		"EN":"about us",
+		"FR":"à notre sujet",
+		"HI":"हमारे बारे में",
+		"IT":"chi siamo",
+		"SP":"sobre nosotros",
+		"JP":"私たちについて",
+		"AR":"حولنا",
+		"PT":"Sobre nós"
+	},
+	"T_SELECT_COLOR":{
+		"EN":"select color",
+		"FR":"sélectionner la couleur",
+		"HI":"रंग चुनें",
+		"IT":"seleziona il colore",
+		"SP":"seleccionar color",
+		"JP":"色を選択",
+		"AR":"اختر اللون",
+		"PT":"Selecionar cor"
+	},
+	"T_SELECT_PLAYERS":{
+	"EN":"Select Players",
+	"JP":"プレーヤーを選択",
+	"PT":"Selecionar Jogadores",
+	"IT":"Seleziona Giocatori",
+	"AR":"اختر اللاعبين",
+	"SP":"Seleccionar Jugadores",
+	"FR":"Sélectionner les Joueurs",
+	"HI":"खिलाड़ी चयन करें"
+	},
+	"T_MAIN_MENU":{
+		"EN":"Main Menu",
+		"JP":"メインメニュー",
+		"PT":"Menu Principal",
+		"IT":"Menu Principale",
+		"AR":"القائمة الرئيسية",
+		"SP":"Menú Principal",
+		"FR":"Menu Principal",
+		"HI":"मुख्य मेनू"
+	},
+	"T_PLAYER":{
+		"EN":"player",
+		"FR":"joueur",
+		"HI":"खिलाड़ी",
+		"IT":"giocatore",
+		"SP":"jugador",
+		"JP":"プレイヤー",
+		"AR":"لاعب",
+		"PT":"Jogador"
+	},
+	"T_PLAY":{
+		"EN":"play",
+		"FR":"jouer",
+		"HI":"खेलना",
+		"IT":"giocare",
+		"SP":"jugar",
+		"JP":"遊ぶ",
+		"AR":"لعب",
+		"PT":"Jogar"
+	},
+	"T_JOIN_GAME":{
+		"EN":"join game",
+		"FR":"joindre le jeu",
+		"HI":"खेल में शामिल हों",
+		"IT":"unirsi al gioco",
+		"SP":"unirse al juego",
+		"JP":"ゲームに参加する",
+		"AR":"الانضمام إلى اللعبة",
+		"PT":"Entrar no jogo"
+	},
+	"T_ENTER_NAME":{
+		"EN":"Enter name",
+		"FR":"Entrer le nom",
+		"HI":"नाम दर्ज करें",
+		"IT":"Inserisci il nome",
+		"SP":"Ingresar nombre",
+		"JP":"名前を入力",
+		"AR":"أدخل الاسم",
+		"PT":"Inserir nome"
+	},
+	"T_PLAYER_LIST":{
+		"EN":"player list",
+		"JP":"プレイヤーリスト",
+		"PT":"lista de jogadores",
+		"IT":"elenco giocatori",
+		"AR":"قائمة اللاعبين",
+		"SP":"lista de jugadores",
+		"FR":"liste des joueurs",
+		"HI":"खिलाड़ियों की सूची"
+	},
+	"T_SETTINGS":{
+		"EN":"Settings",
+		"FR":"Paramètres",
+		"HI":"सेटिंग्स",
+		"IT":"Impostazioni",
+		"SP":"Configuración",
+		"JP":"設定",
+		"AR":"إعدادات",
+		"PT":"Configurações"
+	},
+	"T_SELECT_AN_OPTION":{
+		"EN":"Select an option",
+		"FR":"Sélectionner une option",
+		"HI":"एक विकल्प चुनें",
+		"IT":"Seleziona un'opzione",
+		"SP":"Seleccionar una opción",
+		"JP":"オプションを選択",
+		"AR":"اختر خيارًا",
+		"PT":"Selecionar uma opção"
+	},
+	"T_T_LANGUAGE":{
+		"EN":"english",
+		"FR":"français",
+		"HI":"हिन्दी",
+		"IT":"ITo",
+		"SP":"español",
+		"JP":"日本語",
+		"AR":"عربي",
+		"PT":"Português"
+	},
+	"T_2_PLAYERS":{
+		"EN":"2 Players",
+		"JP":"2 プレーヤー",
+		"PT":"2 Jogadores",
+		"IT":"2 Giocatori",
+		"AR":"٢ لاعبين",
+		"SP":"2 Jugadores",
+		"FR":"2 Joueurs",
+		"HI":"2 खिलाड़ी"
+	},
+	"T_3_PLAYERS":{
+		"EN":"3 Players",
+		"JP":"3 プレーヤー",
+		"PT":"3 Jogadores",
+		"IT":"3 Giocatori",
+		"AR":"٣ لاعبين",
+		"SP":"3 Jugadores",
+		"FR":"3 Joueurs",
+		"HI":"3 खिलाड़ी"
+	},
+	"T_4_PLAYERS":{
+		"EN":"4 Players",
+		"JP":"4 プレーヤー",
+		"PT":"4 Jogadores",
+		"IT":"4 Giocatori",
+		"AR":"٤ لاعبين",
+		"SP":"4 Jugadores",
+		"FR":"4 Joueurs",
+		"HI":"4 खिलाड़ी"
+	},
+	"T_VERSION_ENUM":{
+		"AR":"الإصدار 00",
+		"PT":"Versão 00",
+		"EN":"Version 00",
+		"FR":"Version 00",
+		"HI":"संस्करण 00",
+		"IT":"Versione 00",
+		"SP":"Versión 00",
+		"JP":"バージョン 00",
+		"ENUM":"00"
+	},
+	"T_EXIT":{
+		"EN":"exit",
+		"JP":"出口",
+		"PT":"saída",
+		"IT":"uscita",
+		"AR":"مخرج",
+		"SP":"salida",
+		"FR":"sortie",
+		"HI":"निकास"
+	},
+	"T_LEAVE_GAME_QN":{
+		"EN":"Leave game?",
+		"JP":"ゲームを終了しますか？",
+		"PT":"Sair do jogo?",
+		"IT":"Lasciare il gioco?",
+		"AR":"مغادرة اللعبة؟",
+		"SP":"¿Salir del juego?",
+		"FR":"Quitter le jeu ?",
+		"HI":"गेम छोड़ें?"
+	},
+	"T_CANCEL":{
+		"EN":"Cancel",
+		"JP":"キャンセル",
+		"PT":"Cancelar",
+		"IT":"Annulla",
+		"AR":"إلغاء",
+		"SP":"Cancelar",
+		"FR":"Annuler",
+		"HI":"रद्द करें"
+	},
+	"T_CONTINUE":{
+		"EN":"Continue",
+		"JP":"続ける",
+		"PT":"Continuar",
+		"IT":"Continua",
+		"AR":"استمر",
+		"SP":"Continuar",
+		"FR":"Continuer",
+		"HI":"जारी रखें"
+	},
+	"T_PLAYER_ENUM":{
+		"EN":"player 00",
+		"JP":"プレイヤー00",
+		"PT":"jogador 00",
+		"IT":"giocatore 00",
+		"AR":"لاعب 00",
+		"SP":"jugador 00",
+		"FR":"joueur 00",
+		"HI":"खिलाड़ी 00",
+		"ENUM":"00"
+	},
+	"T_INVALID_GAME_CODE":{
+		"EN":"Invalid Game Code",
+		"JP":"無効なゲームコード",
+		"PT":"Código de Jogo Inválido",
+		"IT":"Codice Gioco Non Valido",
+		"AR":"رمز اللعبة غير صالح",
+		"SP":"Código de Juego Inválido",
+		"FR":"Code de Jeu Invalide",
+		"HI":"अवैध गेम कोड"
+	},
+	"T_HELLO_ENUM":{
+		"EN":"Hello 000",
+		"JP":"こんにちは 000",
+		"PT":"Olá 000",
+		"IT":"Ciao 000",
+		"AR":"000 مرحبا",
+		"SP":"Hola 000",
+		"FR":"Bonjour 000",
+		"HI":"नमस्ते 000",
+		"ENUM":"000"
+	},
+	"T_HARD_MODE":{
+		"EN":"Hard Mode",
+		"JP":"ハードモード",
+		"PT":"Modo Difícil",
+		"IT":"Modalità Difficile",
+		"AR":"الوضع الصعب",
+		"SP":"Modo Difícil",
+		"FR":"Mode Difficile",
+		"HI":"कठिन मोड"
+	},
+	"T_GAME_SPEED":{
+		"EN":"Game Speed",
+		"JP":"ゲームスピード",
+		"PT":"Velocidade do Jogo",
+		"IT":"Velocità di gioco",
+		"AR":"سرعة اللعبة",
+		"SP":"Velocidad del Juego",
+		"FR":"Vitesse du Jeu",
+		"HI":"गेम की गति"
+	},
+	"T_SOUND_ON":{
+		"EN":"Sound On",
+		"JP":"サウンドオン",
+		"PT":"Som Ligado",
+		"IT":"Audio Attivo",
+		"AR":"تشغيل الصوت",
+		"SP":"Sonido Activado",
+		"FR":"Son activé",
+		"HI":"ध्वनि चालू"
+	},
+	"T_SOUND_OFF":{
+		"EN":"Sound Off",
+		"JP":"サウンドオフ",
+		"PT":"Som Desligado",
+		"IT":"Audio Disattivato",
+		"AR":"إيقاف الصوت",
+		"SP":"Sonido Apagado",
+		"FR":"Son désactivé",
+		"HI":"ध्वनि बंद"
+	},
+	"T_SLOW":{
+		"EN":"Slow",
+		"JP":"遅い",
+		"PT":"Lento",
+		"IT":"Lento",
+		"AR":"بطيء",
+		"SP":"Lento",
+		"FR":"Lent",
+		"HI":"धीमा"
+	},
+	"T_FAST":{
+		"EN":"Fast",
+		"JP":"速い",
+		"PT":"Rápido",
+		"IT":"Veloce",
+		"AR":"سريع",
+		"SP":"Rápido",
+		"FR":"Rapide",
+		"HI":"तेज"
+	},
+	"T_FAILED_TO_CONNECT":{
+		"EN":"Failed to connect",
+		"JP":"接続に失敗しました",
+		"PT":"Falha ao conectar",
+		"IT":"Connessione non riuscita",
+		"AR":"فشل الاتصال",
+		"SP":"Error al conectar",
+		"FR":"Échec de la connexion",
+		"HI":"कनेक्ट करने में विफल"
+	},
+	"T_ENTER_GAME_CODE":{
+		"EN":"Enter Game Code",
+		"JP":"ゲームコードを入力",
+		"PT":"Digite o Código do Jogo",
+		"IT":"Inserisci il Codice del Gioco",
+		"AR":"أدخل رمز اللعبة",
+		"SP":"Ingresar código del juego",
+		"FR":"Entrer le code du jeu",
+		"HI":"गेम कोड दर्ज करें"
+	},
+	"T_CHECKING_GAME_CODE_ENUM":{
+		"EN":"Checking Game Code: XYZ",
+		"JP":"ゲームコードの確認：XYZ",
+		"PT":"Verificando Código do Jogo: XYZ",
+		"IT":"Controllo Codice del Gioco: XYZ",
+		"AR":"فحص رمز اللعبة: XYZ",
+		"SP":"Verificando código del juego: XYZ",
+		"FR":"Vérification du code du jeu : XYZ",
+		"HI":"गेम कोड जाँच: XYZ",
+		"ENUM":"XYZ"
+	},
+	"T_CONTACTING_SERVER_ENUM":{
+		"EN":"Contacting Server...",
+		"JP":"サーバーに接続中...",
+		"PT":"Conectando ao Servidor...",
+		"IT":"Contattando il Server...",
+		"AR":"الاتصال بالخادم...",
+		"SP":"Conectando con el servidor...",
+		"FR":"Contact avec le serveur en cours...",
+		"HI":"सर्वर से संपर्क कर रहा है...",
+		"ENUM":"..."
+	},
+	"T_SESSION_EXPIRES_IN_ENUM_SECONDS":{
+		"EN":"Session expires in 00 seconds",
+		"JP":"セッションは00秒で期限切れになります",
+		"PT":"A sessão expira em 00 segundos",
+		"IT":"La sessione scade in 00 secondi",
+		"AR":"تنتهي الجلسة في 00 ثانية",
+		"SP":"La sesión expira en 00 segundos",
+		"FR":"La session expire dans 00 secondes",
+		"HI":"सत्र 00 सेकंड में समाप्त हो जाता है",
+		"ENUM":"00"
+	},
+	"T_INVITE_OTHER_PLAYERS":{
+		"EN":"Invite other player",
+		"JP":"他のプレイヤーを招待",
+		"PT":"Convidar outro jogador",
+		"IT":"Invita un altro giocatore",
+		"AR":"دعوة لاعب آخر",
+		"SP":"Invitar a otro jugador",
+		"FR":"Inviter un autre joueur",
+		"HI":"अन्य खिलाड़ी को आमंत्रित करें"
+	},
+		"T_YES":{
+		"EN":"Yes",
+		"JP":"はい",
+		"PT":"Sim",
+		"IT":"Sì",
+		"AR":"نعم",
+		"SP":"Sí",
+		"FR":"Oui",
+		"HI":"हाँ"
+	},
+	"T_NO":{
+		"EN":"No",
+		"JP":"いいえ",
+		"PT":"Não",
+		"IT":"No",
+		"AR":"لا",
+		"SP":"No",
+		"FR":"Non",
+		"HI":"नहीं"
+	},
+	"T_YOU":{
+		"EN":"you",
+		"JP":"あなた",
+		"PT":"você",
+		"IT":"tu",
+		"AR":"أنت",
+		"SP":"tú",
+		"FR":"tu",
+		"HI":"तुम"
+	},
+	"T_INVALID_NAME":{
+	  "EN":"Invalid name",
+	  "JP":"無効な名前",
+	  "PT":"Nome inválido",
+	  "IT":"Nome non valido",
+	  "AR":"اسم غير صالح",
+	  "SP":"Nombre inválido",
+	  "FR":"Nom invalide",
+	  "HI":"अमान्य नाम"
+	},
+	"T_RANDOM":{
+	  "EN":"Random",
+	  "JP":"ランダム",
+	  "PT":"Aleatório",
+	  "IT":"Casuale",
+	  "AR":"عشوائي",
+	  "SP":"Aleatorio",
+	  "FR":"Aléatoire",
+	  "HI":"यादृच्छिक"
+	},
+	"T_JOIN_A_RANDOM_PLAYER":{
+	  "EN":"Join a random player",
+	  "JP":"ランダムなプレーヤーに参加",
+	  "PT":"Junte-se a um jogador aleatório",
+	  "IT":"Unisciti a un giocatore casuale",
+	  "AR":"انضم إلى لاعب عشوائي",
+	  "SP":"Unirse a un jugador aleatorio",
+	  "FR":"Rejoindre un joueur aléatoire",
+	  "HI":"किसी यादृच्छिक खिलाड़ी से जुड़ें"
+	},
+	"T_SEARCHING_FOR_PLAYERS":{
+	  "EN":"Searching for players",
+	  "JP":"プレーヤーを検索中",
+	  "PT":"Procurando por jogadores",
+	  "IT":"Ricerca giocatori",
+	  "AR":"البحث عن لاعبين",
+	  "SP":"Buscando jugadores",
+	  "FR":"Recherche de joueurs",
+	  "HI":"खिलाड़ियों की खोज"
+	},
+	"T_CONTACTING_SERVER_EPS":{
+	  "EN":"Contacting Server...",
+	  "JP":"サーバーに接続中...",
+	  "PT":"Entrando em contato com o servidor...",
+	  "IT":"Contattando il server...",
+	  "AR":"الاتصال بالخادم...",
+	  "SP":"Conectando con el servidor...",
+	  "FR":"Contact avec le serveur...",
+	  "HI":"सर्वर से संपर्क कर रहा है..."
+	},
+	"T_NAME_TOO_SHORT":{
+	  "EN":"Name too short",
+	  "JP":"名前が短すぎます",
+	  "PT":"Nome muito curto",
+	  "IT":"Nome troppo corto",
+	  "AR":"الاسم قصير جدًا",
+	  "SP":"Nombre demasiado corto",
+	  "FR":"Nom trop court",
+	  "HI":"नाम बहुत छोटा है"
+	},
+	"T_JOIN_RANDOM_SESSION":{
+		"EN":"Join Random Session",
+		"JP":"ランダムなセッションに参加する",
+		"PT":"Entrar em uma Sessão Aleatória",
+		"IT":"Unisciti a una Sessione Casuale",
+		"AR":"الانضمام إلى جلسة عشوائية",
+		"SP":"Unirse a una Sesión Aleatoria",
+		"FR":"Rejoindre une Session Aléatoire",
+		"HI":"यादृच्छिक सत्र में शामिल हों"
+	},
+	"T_WATCH_AN_AD_TO_ROLL_A_SIX":{
+		"EN":"Watch an ad to roll a 6",
+		"JP":"６を出すために広告を視聴する",
+		"PT":"Assista a um anúncio para tirar um 6",
+		"IT":"Guarda un annuncio per tirare un 6",
+		"AR":"شاهد إعلانًا لرمي النرد بالرقم ٦",
+		"SP":"Mira un anuncio para sacar un 6",
+		"FR":"Regardez une publicité pour lancer un 6",
+		"HI":"छह निकालने के लिए एक विज्ञापन देखें"
+	},
+	"T_RESET":{
+		"EN":"Reset",
+		"JP":"リセット",
+		"PT":"Redefinir",
+		"IT":"Ripristina",
+		"AR":"إعادة تعيين",
+		"SP":"Restablecer",
+		"FR":"Réinitialiser",
+		"HI":"रीसेट"
+	},
+	"T_CONNECTING_TO_SERVER_EPS":{
+		"EN":"Connecting to server...",
+		"JP":"サーバーに接続中...",
+		"PT":"Conectando ao servidor...",
+		"IT":"Connessione al server in corso...",
+		"AR":"...الاتصال بالخادم",
+		"SP":"Conectando al servidor...",
+		"FR":"Connexion au serveur en cours...",
+		"HI":"सर्वर से कनेक्ट हो रहा है..."
+	},
+	"T_RESUME":{
+		"EN":"Resume",
+		"JP":"再開",
+		"PT":"Continuar",
+		"IT":"Riprendere",
+		"AR":"استئناف",
+		"SP":"Continuar",
+		"FR":"Reprendre",
+		"HI":"आगे बढ़ें"
+	},
+	"T_PLAYER_DISCONNECTED":{
+		"EN":"Player Disconnected",
+		"JP":"プレイヤーが切断されました",
+		"PT":"Jogador Desconectado",
+		"IT":"Giocatore Disconnesso",
+		"AR":"تم فصل اللاعب",
+		"SP":"Jugador Desconectado",
+		"FR":"Joueur Déconnecté",
+		"HI":"खिलाड़ी कनेक्ट नहीं है"
+	},
+	"T_RANK":{
+		"EN":"rank",
+		"JP":"ランキング",
+		"PT":"classificação",
+		"IT":"classifica",
+		"AR":"تصنيف",
+		"SP":"clasificación",
+		"FR":"classement",
+		"HI":"रैंकिंग"
+	},
+	"T_NAME":{
+		"EN":"Name",
+		"JP":"名前",
+		"PT":"Nome",
+		"IT":"Nome",
+		"AR":"الاسم",
+		"SP":"Nombre",
+		"FR":"Nom",
+		"HI":"नाम"
+	},
+	"T_CONNECTED":{
+		"EN":"Connected",
+		"JP":"接続済み",
+		"PT":"Conectado",
+		"IT":"Connesso",
+		"AR":"متصل",
+		"SP":"Conectado",
+		"FR":"Connecté",
+		"HI":"कनेक्ट किया गया"
+	},
+	"T_WAITING_FOR_OTHER_PLAYERS_EPS":{
+		"EN": "Waiting for other players...",
+		"JP": "他のプレイヤーを待っています...",
+		"PT": "Esperando por outros jogadores...",
+		"IT": "In attesa degli altri giocatori...",
+		"AR": "...انتظار لاعبين آخرين",
+		"SP": "Esperando a otros jugadores...",
+		"FR": "En attente d'autres joueurs...",
+		"HI": "अन्य खिलाड़ियों का इंतजार कर रहा है..."
+  	},
+	"T_CONNECTED_TO_SERVER":{
+		"EN":"Connected to Server",
+		"JP":"サーバーに接続しました",
+		"PT":"Conectado ao Servidor",
+		"IT":"Connesso al Server",
+		"AR":"تم الاتصال بالخادم",
+		"SP":"Conectado al Servidor",
+		"FR":"Connecté au Serveur",
+		"HI":"सर्वर से कनेक्ट किया गया"
+	},
+	"T_OTHER_PLAYER_DISCONNECTED":{
+		"EN":"Other player disconnected",
+		"JP":"他のプレイヤーが切断されました",
+		"PT":"Outro jogador desconectado",
+		"IT":"Altro giocatore disconnesso",
+		"AR":"تم فصل لاعب آخر",
+		"SP":"Otro jugador desconectado",
+		"FR":"Autre joueur déconnecté",
+		"HI":"अन्य खिलाड़ी डिस्कनेक्ट किया गया"
+	},
+	"T_ATTEMPT_FAILED_RETRY_EPS":{
+		"EN":"Attempt Failed, Retry",
+		"JP":"試行に失敗しました、再試行",
+		"PT":"Tentativa falhou, Tentar Novamente",
+		"IT":"Tentativo fallito, Riprovare",
+		"AR":"فشلت المحاولة، حاول مرة أخرى",
+		"SP":"Intento fallido, Volver a intentar",
+		"FR":"Échec de la tentative, Réessayer",
+		"HI":"प्रयास विफल, पुनः प्रयास करें"
+	},
+	"T_SHARE_GAME_CODE_CLN_ENUM":{
+		"EN":"Game Code : 00",
+		"JP":"ゲームコード：00",
+		"PT":"Código do Jogo : 00",
+		"IT":"Codice del Gioco : 00",
+		"AR":"رمز اللعبة: 00",
+		"SP":"Código del Juego : 00",
+		"FR":"Code du Jeu : 00",
+		"HI":"गेम कोड : 00",
+		"ENUM":"00"
+	  },
+	"T_FEATURE_FUNCTIONALITY_MESSAGE":{
+		"EN":"This feature allows you to play with friends that are on the same network as you.",
+		"JP":"この機能により、同じネットワークにいる友達と一緒にプレイできます。",
+		"PT":"Esta funcionalidade permite que você jogue com amigos que estão na mesma rede que você.",
+		"IT":"Questa funzionalità ti consente di giocare con gli amici che si trovano nella stessa rete in cui ti trovi.",
+		"AR":"تسمح هذه الميزة لك باللعب مع الأصدقاء الذين يكونون على نفس الشبكة التي أنت عليها.",
+		"SP":"Esta función te permite jugar con amigos que están en la misma red que tú.",
+		"FR":"Cette fonctionnalité vous permet de jouer avec des amis qui sont sur le même réseau que vous.",
+		"HI":"यह सुविधा आपको उन दोस्तों के साथ खेलने की सुविधा प्रदान करती है जो आपके साथ एक ही नेटवर्क पर हैं।"
+	  },
+	"T_WATCH_TUTORIAL":{
+		"EN":"Watch Tutorial",
+		"JP":"チュートリアルを見る",
+		"PT":"Assistir Tutorial",
+		"IT":"Guarda il Tutorial",
+		"AR":"مشاهدة الدرس التعليمي",
+		"SP":"Ver Tutorial",
+		"FR":"Regarder le Tutoriel",
+		"HI":"ट्यूटोरियल देखें"
+	  },
+	"T_GO_TO_TUTORIALS":{
+		"EN":"Go To Tutorials",
+		"JP":"チュートリアルに移動",
+		"PT":"Ir para Tutoriais",
+		"IT":"Vai ai Tutorial",
+		"AR":"الانتقال إلى الدروس التعليمية",
+		"SP":"Ir a Tutoriales",
+		"FR":"Aller aux Tutoriels",
+		"HI":"ट्यूटोरियल्स पर जाएं"
+	  },
+	"T_YOU_CAN_FIND_TUTORIALS_UNDER":{
+		"EN":"You can also find tutorials under Main Menu > Settings > Tutorials",
+		"JP":"メインメニュー>設定>チュートリアルの下にチュートリアルも見つけることができます",
+		"PT":"Você também pode encontrar tutoriais em Menu Principal > Configurações > Tutoriais",
+		"IT":"È possibile trovare i tutorial anche nel Menu Principale > Impostazioni > Tutorial",
+		"AR":"يمكنك أيضًا العثور على الدروس التعليمية تحت القائمة الرئيسية> الإعدادات> الدروس التعليمية",
+		"SP":"También puedes encontrar tutoriales en Menú Principal > Ajustes > Tutoriales",
+		"FR":"Vous pouvez également trouver des tutoriels sous Menu Principal > Paramètres > Tutoriels",
+		"HI":"आप मुख्य मेनू > सेटिंग्स > ट्यूटोरियल्स के अंदर भी ट्यूटोरियल्स खोज सकते हैं"
+   },
+   "T_BLOCKING":{
+		"EN": "blocking",
+		"JP": "ガード",
+		"PT": "bloqueio",
+		"IT": "blocco",
+		"AR": "صد",
+		"SP": "bloqueo",
+		"FR": "blocage",
+		"HI": "ब्लॉक"
+	},
+	"T_NEW_GAME":{
+		"EN":"New Game",
+		"JP":"新しいゲーム",
+		"PT":"Novo Jogo",
+		"IT":"Nuova Partita",
+		"AR":"لعبة جديدة",
+		"SP":"Nuevo Juego",
+		"FR":"Nouvelle Partie",
+		"HI":"नया खेल"
+	  },
+	"T_TURNS":{
+		"EN":"Turns",
+		"JP":"ターン",
+		"PT":"Turnos",
+		"IT":"Turni",
+		"AR":"دورات",
+		"SP":"Turnos",
+		"FR":"Tours",
+		"HI":"टर्न"
+	  },
+	"T_BACK":{
+		"EN":"Back",
+		"JP":"戻る",
+		"PT":"Voltar",
+		"IT":"Indietro",
+		"AR":"العودة",
+		"SP":"Atrás",
+		"FR":"Retour",
+		"HI":"वापस"
+	  }
+}

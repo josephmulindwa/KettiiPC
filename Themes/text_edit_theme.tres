@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://6bfv0x6ge38r"]
+
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="1_8pswe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcb41"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfth4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0s6md"]
+
+[resource]
+default_font = ExtResource("1_8pswe")
+default_font_size = 0
+TextEdit/font_sizes/font_size = 56
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_fcb41")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_jfth4")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_0s6md")

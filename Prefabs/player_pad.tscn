@@ -1,0 +1,218 @@
+[gd_scene load_steps=13 format=3 uid="uid://6lc6odwbshwi"]
+
+[ext_resource type="Texture2D" uid="uid://bnf5p3wv4pfjv" path="res://Sprites/RoundedRect.png" id="1_rftkk"]
+[ext_resource type="Script" path="res://Scripts/PlayerIdentificationLogic.gd" id="1_vw32t"]
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="2_4x8iv"]
+[ext_resource type="Texture2D" uid="uid://b0qxx1rqsskjh" path="res://Sprites/LocationMarker.png" id="2_xsbfl"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="3_8vx4t"]
+[ext_resource type="Script" path="res://Scripts/ScaleLerpAnimation.gd" id="4_x34ir"]
+[ext_resource type="Texture2D" uid="uid://bst1ogjg1nu6e" path="res://Sprites/PersonIconTransparent.png" id="5_me72h"]
+[ext_resource type="Texture2D" uid="uid://dog7u5vrhbwel" path="res://Sprites/ProgressCircle.png" id="5_oxwcu"]
+[ext_resource type="Script" path="res://Scripts/ProgressBarHandler.gd" id="6_l0oq2"]
+[ext_resource type="Texture2D" uid="uid://d28ojs7dt1ty7" path="res://Sprites/OfflineIcon.png" id="7_hva62"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8r5j3"]
+font = ExtResource("2_4x8iv")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2smb"]
+font = ExtResource("2_4x8iv")
+font_size = 42
+
+[node name="PlayerPad" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vw32t")
+
+[node name="RoundedRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 330.0
+offset_top = 595.0
+offset_right = 510.0
+offset_bottom = 775.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(90, 90)
+texture = ExtResource("1_rftkk")
+expand_mode = 1
+
+[node name="PercentageText" type="Label" parent="RoundedRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -234.0
+offset_bottom = -194.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 2.35619
+pivot_offset = Vector2(40, 20)
+text = "100%"
+label_settings = SubResource("LabelSettings_8r5j3")
+horizontal_alignment = 1
+
+[node name="PlayerName" type="Label" parent="RoundedRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -150.0
+offset_right = 110.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(110, 28)
+text = "YOU"
+label_settings = SubResource("LabelSettings_i2smb")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_8vx4t")
+translate_keys = Array[String]([""])
+font_size_ratios = {
+"JP": 0.94,
+"PT": 0.98,
+"SP": 0.96
+}
+
+[node name="ContentControl" type="Control" parent="RoundedRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="RoundedRect/ContentControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(70, 70)
+
+[node name="PlayerImage" type="TextureRect" parent="RoundedRect/ContentControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(70, 70)
+texture = ExtResource("5_me72h")
+expand_mode = 1
+
+[node name="ProgressBarControl" type="Control" parent="RoundedRect/ContentControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="RoundedRect/ContentControl/ProgressBarControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(60, 60)
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("5_oxwcu")
+texture_progress = ExtResource("5_oxwcu")
+tint_under = Color(0.337255, 0.337255, 0.337255, 0.764706)
+tint_progress = Color(0.384314, 1, 0.701961, 1)
+script = ExtResource("6_l0oq2")
+
+[node name="OfflineImage" type="TextureRect" parent="RoundedRect/ContentControl"]
+visible = false
+modulate = Color(0.909804, 0.956863, 0.976471, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("7_hva62")
+
+[node name="LocationMarkerParent" type="Control" parent="RoundedRect/ContentControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LocationMarker" type="TextureRect" parent="RoundedRect/ContentControl/LocationMarkerParent"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -150.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 150)
+texture = ExtResource("2_xsbfl")
+expand_mode = 1
+script = ExtResource("4_x34ir")
+min_ratio = 0.8
+max_ratio = 1.0
+scale_time_seconds = 0.4

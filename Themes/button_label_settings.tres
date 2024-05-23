@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ck83cb5l1pqoo"]
+
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="1_2af4d"]
+
+[resource]
+font = ExtResource("1_2af4d")
+font_size = 54
+outline_color = Color(0.305882, 0.305882, 0.305882, 1)
+shadow_color = Color(0.309804, 0.309804, 0.309804, 1)
+shadow_offset = Vector2(2, 2)

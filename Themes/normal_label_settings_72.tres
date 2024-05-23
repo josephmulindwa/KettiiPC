@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://co35nvxgodayu"]
+
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="1_0xxqk"]
+
+[resource]
+font = ExtResource("1_0xxqk")
+font_size = 72

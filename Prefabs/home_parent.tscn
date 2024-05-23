@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://jv2sib0tpru5"]
+
+[ext_resource type="PackedScene" uid="uid://brt0a182kwqsg" path="res://Prefabs/tile_pad_parent.tscn" id="1_qb6j8"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileParent1" parent="." instance=ExtResource("1_qb6j8")]
+layout_mode = 1
+
+[node name="Tile" parent="TileParent1" index="0"]
+anchors_preset = 8
+offset_left = 55.0
+offset_top = 55.0
+offset_right = 105.0
+offset_bottom = 105.0
+pivot_offset = Vector2(25, 25)
+
+[node name="TileParent2" parent="." instance=ExtResource("1_qb6j8")]
+layout_mode = 1
+
+[node name="Tile" parent="TileParent2" index="0"]
+anchors_preset = 8
+offset_left = 168.5
+offset_top = 55.0
+offset_right = 218.5
+offset_bottom = 105.0
+pivot_offset = Vector2(25, 25)
+
+[node name="TileParent3" parent="." instance=ExtResource("1_qb6j8")]
+layout_mode = 1
+
+[node name="Tile" parent="TileParent3" index="0"]
+anchors_preset = 8
+offset_left = 55.0
+offset_top = 168.5
+offset_right = 105.0
+offset_bottom = 218.5
+pivot_offset = Vector2(25, 25)
+
+[editable path="TileParent1"]
+[editable path="TileParent2"]
+[editable path="TileParent3"]

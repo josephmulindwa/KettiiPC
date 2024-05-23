@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3bvviphmnsv0"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerListItem.gd" id="1_m6q6c"]
+[ext_resource type="Texture2D" uid="uid://vjyu4hwqd1fi" path="res://Sprites/NamePad.png" id="1_nfktr"]
+[ext_resource type="LabelSettings" uid="uid://yxai1ygyu4t2" path="res://Themes/text_label_settings_00.tres" id="2_wpn3f"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="3_dc8jq"]
+[ext_resource type="Texture2D" uid="uid://d4fmmsbrgvrxe" path="res://Sprites/ListPlayerMarker.png" id="4_ligln"]
+
+[node name="PlayerListItem" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m6q6c")
+
+[node name="PlayerImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -55.0
+offset_right = -120.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(55, 55)
+expand_mode = 1
+
+[node name="PlayerPad" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(700, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -62.5
+offset_right = 350.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(350, 62)
+texture = ExtResource("1_nfktr")
+
+[node name="PlayerNameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 230.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(165, 45)
+label_settings = ExtResource("2_wpn3f")
+vertical_alignment = 1
+script = ExtResource("3_dc8jq")
+
+[node name="ColorMarker" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -28.0
+offset_right = -301.0
+offset_bottom = 24.0
+grow_vertical = 2
+pivot_offset = Vector2(12, 26)
+
+[node name="RankLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -38.0
+offset_right = -240.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 35)
+text = "
+"
+label_settings = ExtResource("2_wpn3f")
+vertical_alignment = 1
+
+[node name="PlayerMarker" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 260.0
+offset_top = -20.0
+offset_right = 300.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("4_ligln")
+expand_mode = 1

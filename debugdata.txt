@@ -1,0 +1,19 @@
+keytool -genkey -v -keystore my-release-key.keystore -alias kettii1301 -keyalg RSA -keysize 2048 -validity 10000
+pass=>kettii1301
+name=> Joseph Mulindwa
+unit&org=>Anileconn
+City&State=>.
+Country=>UG
+
+
+What worked;
+- using jdk 11 (didn't use openjdk, but worth considering)
+- gradle 7.3.3-all
+
+
+SIGNING BUNDLE | OPENJDK 21.0.1; pass=>{pass}
+keytool -export -rfc -keystore "C:\Users\ANIL\Downloads\keydata\my-release-key.keystore"  -alias kettii1301 -file "C:\Users\ANIL\Downloads\keydata\certificate.pem"
+
+jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore "C:\Users\ANIL\Downloads\keydata\my-release-key.keystore"  "C:\Users\ANIL\Documents\Output\Apk\cketi.apk"  kettii1301
+
+jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore "C:\Users\ANIL\Downloads\keydata\my-release-key.keystore"  "C:\Users\ANIL\Documents\Output\Apk\cketti.aab"  kettii1301

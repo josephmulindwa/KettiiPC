@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://osmve74a3b8l"]
+
+[ext_resource type="Script" path="res://Scripts/DicePadHandler.gd" id="1_d07rt"]
+[ext_resource type="Texture2D" uid="uid://bnf5p3wv4pfjv" path="res://Sprites/RoundedRect.png" id="1_hgi78"]
+[ext_resource type="Texture2D" uid="uid://c81khlduissg8" path="res://Sprites/Hand.png" id="4_cs13s"]
+[ext_resource type="Script" path="res://Scripts/ScaleLerpAnimation.gd" id="5_g3x6x"]
+
+[node name="DicePad_Parent" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d07rt")
+
+[node name="DicePad" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -110.0
+offset_top = 640.0
+offset_right = -110.0
+offset_bottom = 640.0
+
+[node name="DiceTouchPad" type="TextureRect" parent="DicePad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(75, 75)
+
+[node name="DiceBoundRect" type="TextureRect" parent="DicePad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(70, 70)
+texture = ExtResource("1_hgi78")
+expand_mode = 1
+
+[node name="DicePointer" type="TextureRect" parent="DicePad"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = 100.0
+offset_right = 35.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(45, 60)
+texture = ExtResource("4_cs13s")
+expand_mode = 1
+script = ExtResource("5_g3x6x")
+min_ratio = 0.8
+max_ratio = 1.05
+scale_time_seconds = 0.4

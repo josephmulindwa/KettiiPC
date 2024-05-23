@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://3nykbktgjcg5"]
+
+[ext_resource type="FontFile" uid="uid://cnojn2aqk2g1j" path="res://Resources/KronaOne-Regular.ttf" id="1_ed4cu"]
+
+[resource]
+font = ExtResource("1_ed4cu")
+font_size = 58

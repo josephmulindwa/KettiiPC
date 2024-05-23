@@ -1,0 +1,43 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ct18sdqd68l82"]
+
+[ext_resource type="Texture2D" uid="uid://ctteiiahjb0gi" path="res://Sprites/LongButton.png" id="1_icub4"]
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="1_r5c35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr26c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yl111"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2j7y5"]
+texture = ExtResource("1_icub4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8e0v"]
+texture = ExtResource("1_icub4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71lnn"]
+texture = ExtResource("1_icub4")
+modulate_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.745098, 0.745098, 0.745098, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 0.392157)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 56
+Button/fonts/font = ExtResource("1_r5c35")
+Button/styles/disabled = SubResource("StyleBoxEmpty_hr26c")
+Button/styles/focus = SubResource("StyleBoxEmpty_yl111")
+Button/styles/hover = SubResource("StyleBoxTexture_2j7y5")
+Button/styles/normal = SubResource("StyleBoxTexture_u8e0v")
+Button/styles/pressed = SubResource("StyleBoxTexture_71lnn")

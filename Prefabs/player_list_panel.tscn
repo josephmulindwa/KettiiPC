@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://jgo2vv8310fb"]
+
+[ext_resource type="Texture2D" uid="uid://cyh4x57u1r6oo" path="res://Sprites/MenuPanelBlue.png" id="1_fxg7e"]
+[ext_resource type="Texture2D" uid="uid://b8t532ef0wwdb" path="res://Sprites/RoundRectTint_Blue.png" id="2_5q5bi"]
+[ext_resource type="Texture2D" uid="uid://cuhjqybvxak2u" path="res://Sprites/HeaderBar.png" id="3_wu62k"]
+[ext_resource type="LabelSettings" uid="uid://divopdpp43654" path="res://Themes/header_label_settings_64.tres" id="4_d2fxq"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="4_uokkm"]
+[ext_resource type="PackedScene" uid="uid://b3bvviphmnsv0" path="res://Prefabs/player_list_item.tscn" id="5_y3uvt"]
+
+[node name="NinePatchPanel" type="NinePatchRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -520.0
+offset_right = 425.0
+offset_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 500)
+texture = ExtResource("1_fxg7e")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="TintBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.0
+offset_top = -390.0
+offset_right = 366.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(366, 366)
+texture = ExtResource("2_5q5bi")
+expand_mode = 1
+
+[node name="HeaderBar" type="TextureRect" parent="TintBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -366.0
+offset_top = 36.0
+offset_right = 366.0
+offset_bottom = 120.0
+grow_horizontal = 2
+pivot_offset = Vector2(366, 42)
+texture = ExtResource("3_wu62k")
+expand_mode = 1
+
+[node name="TitleLabel" type="Label" parent="TintBackground/HeaderBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 40)
+text = "PLAYER LIST"
+label_settings = ExtResource("4_d2fxq")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_uokkm")
+translate_keys = Array[String](["T_PLAYER_LIST"])
+display_format = "UPPER"
+
+[node name="PlayerListItem1" parent="." instance=ExtResource("5_y3uvt")]
+visible = false
+layout_mode = 1
+offset_top = -180.0
+offset_bottom = -180.0
+
+[node name="PlayerListItem2" parent="." instance=ExtResource("5_y3uvt")]
+visible = false
+layout_mode = 1
+offset_top = -35.0
+offset_bottom = -35.0
+
+[node name="PlayerListItem3" parent="." instance=ExtResource("5_y3uvt")]
+visible = false
+layout_mode = 1
+offset_top = 110.0
+offset_bottom = 110.0
+
+[node name="PlayerListItem4" parent="." instance=ExtResource("5_y3uvt")]
+visible = false
+layout_mode = 1
+offset_top = 255.0
+offset_bottom = 255.0

@@ -1,0 +1,3 @@
+- bullet power-up, normal, ice, fire; the fire can blaze and burn nearby enemies when it xplodes when about to die
+- vampire -power-up; you become like an enemy-type you bite and enemies have to run away from you
+- oil paint shader?

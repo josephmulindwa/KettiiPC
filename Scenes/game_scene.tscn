@@ -1,0 +1,1082 @@
+[gd_scene load_steps=35 format=3 uid="uid://b07srhif1i71a"]
+
+[ext_resource type="Script" path="res://Scripts/SoundManager.gd" id="1_h5wbr"]
+[ext_resource type="Script" path="res://Scripts/GameLayerHandler.gd" id="2_qny85"]
+[ext_resource type="Texture2D" uid="uid://bfrb3k4q4f7oe" path="res://Sprites/BoardSprite.png" id="3_d7o6c"]
+[ext_resource type="Texture2D" uid="uid://dugnduj8bvepc" path="res://Sprites/WoodImageClear.png" id="3_yxpbr"]
+[ext_resource type="PackedScene" uid="uid://6lc6odwbshwi" path="res://Prefabs/player_pad.tscn" id="4_ormfq"]
+[ext_resource type="PackedScene" uid="uid://c3bijgh5l8m6y" path="res://Prefabs/yard_parent.tscn" id="5_gcq8b"]
+[ext_resource type="PackedScene" uid="uid://jv2sib0tpru5" path="res://Prefabs/home_parent.tscn" id="6_kurro"]
+[ext_resource type="Theme" uid="uid://dxsk080uwrgs2" path="res://Themes/back_button_theme.tres" id="7_al07m"]
+[ext_resource type="Theme" uid="uid://tg7j48776gpa" path="res://Themes/settings_button_theme.tres" id="9_4o4ra"]
+[ext_resource type="Script" path="res://Scripts/DiceRenderer.gd" id="10_iqbgq"]
+[ext_resource type="PackedScene" uid="uid://osmve74a3b8l" path="res://Prefabs/dice_pad_container.tscn" id="11_6jxbv"]
+[ext_resource type="Script" path="res://Scripts/DiceRoll.gd" id="12_70dqw"]
+[ext_resource type="PackedScene" uid="uid://cb8vrvx1gg8v2" path="res://Scenes/dice_scene.tscn" id="13_vim7t"]
+[ext_resource type="LabelSettings" uid="uid://caexyrkrdw1us" path="res://Themes/slider_bar_description_label_settings.tres" id="16_j4v52"]
+[ext_resource type="Texture2D" uid="uid://887bcyf0htyf" path="res://Sprites/MenuTitleBar.png" id="19_yuelb"]
+[ext_resource type="LabelSettings" uid="uid://3nykbktgjcg5" path="res://Themes/menu_title_label_settings.tres" id="21_7tbwf"]
+[ext_resource type="LabelSettings" uid="uid://c7ldrj4kjek2o" path="res://Themes/normal_label_settings_dark_64.tres" id="22_cbfcw"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="22_jwjyv"]
+[ext_resource type="PackedScene" uid="uid://bilova07og8dh" path="res://Prefabs/long_button.tscn" id="24_rgn4m"]
+[ext_resource type="Theme" uid="uid://cvw4xctkkuhop" path="res://Themes/close_button_theme.tres" id="25_xnhlg"]
+[ext_resource type="PackedScene" uid="uid://bdwver4fu2f63" path="res://Prefabs/piece_type_layer.tscn" id="26_3ku1p"]
+[ext_resource type="Script" path="res://Scripts/GameOptionsHandler.gd" id="27_jhg18"]
+[ext_resource type="Theme" uid="uid://dpxha2xmq1bms" path="res://Themes/toggle_button_theme.tres" id="28_1n2kf"]
+[ext_resource type="LabelSettings" uid="uid://cxvjsb2vdr58o" path="res://Themes/normal_label_settings_dark_bold_64.tres" id="28_201mx"]
+[ext_resource type="Theme" uid="uid://ri1w1jwfr1r1" path="res://Themes/slider_theme.tres" id="29_bcg42"]
+[ext_resource type="Script" path="res://Scripts/GameOverHandler.gd" id="30_5dmcx"]
+[ext_resource type="Texture2D" uid="uid://cyh4x57u1r6oo" path="res://Sprites/MenuPanelBlue.png" id="30_yeycn"]
+[ext_resource type="Texture2D" uid="uid://dfgf23jigu71k" path="res://Sprites/GameOverTextBar.png" id="32_7mig0"]
+[ext_resource type="Texture2D" uid="uid://b8t532ef0wwdb" path="res://Sprites/RoundRectTint_Blue.png" id="33_2o1lo"]
+[ext_resource type="Texture2D" uid="uid://cuhjqybvxak2u" path="res://Sprites/HeaderBar.png" id="34_h8mab"]
+[ext_resource type="LabelSettings" uid="uid://ck83cb5l1pqoo" path="res://Themes/button_label_settings.tres" id="35_3jhnx"]
+[ext_resource type="LabelSettings" uid="uid://divopdpp43654" path="res://Themes/header_label_settings_64.tres" id="35_qgqr5"]
+[ext_resource type="Texture2D" uid="uid://vw0whengynq1" path="res://Sprites/RoundEdgeRect32.png" id="36_wbq1y"]
+[ext_resource type="PackedScene" uid="uid://b3bvviphmnsv0" path="res://Prefabs/player_list_item.tscn" id="38_ang3r"]
+
+[node name="GameNode2D" type="Node2D"]
+
+[node name="SoundControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_h5wbr")
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+script = ExtResource("2_qny85")
+
+[node name="Background" type="TextureRect" parent="GameLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yxpbr")
+expand_mode = 1
+
+[node name="BoardSprite" type="TextureRect" parent="GameLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -530.0
+offset_right = 530.0
+offset_bottom = 530.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(530, 530)
+texture = ExtResource("3_d7o6c")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PlayerPadsParent" type="Control" parent="GameLayer/BoardSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerPad1" parent="GameLayer/BoardSprite/PlayerPadsParent" instance=ExtResource("4_ormfq")]
+layout_mode = 1
+
+[node name="RoundedRect" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad1" index="0"]
+offset_left = 560.0
+offset_top = 350.0
+offset_right = 740.0
+offset_bottom = 530.0
+
+[node name="PercentageText" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad1/RoundedRect" index="0"]
+offset_left = -310.0
+offset_top = 13.3333
+offset_right = -230.0
+offset_bottom = 53.3333
+
+[node name="PlayerPad2" parent="GameLayer/BoardSprite/PlayerPadsParent" instance=ExtResource("4_ormfq")]
+layout_mode = 1
+scale = Vector2(-1, 1)
+player_id = 1
+
+[node name="RoundedRect" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad2" index="0"]
+offset_left = 560.0
+offset_top = 350.0
+offset_right = 740.0
+offset_bottom = 530.0
+
+[node name="PercentageText" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad2/RoundedRect" index="0"]
+offset_left = -310.0
+offset_top = 13.3333
+offset_right = -230.0
+offset_bottom = 53.3333
+rotation = 5.49779
+scale = Vector2(-1, 1)
+
+[node name="PlayerName" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad2/RoundedRect" index="1"]
+scale = Vector2(-1, 1)
+
+[node name="TextureProgressBar" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad2/RoundedRect/ContentControl/ProgressBarControl" index="0"]
+scale = Vector2(-1, 1)
+value = 45.0
+
+[node name="PlayerPad3" parent="GameLayer/BoardSprite/PlayerPadsParent" instance=ExtResource("4_ormfq")]
+layout_mode = 1
+scale = Vector2(-1, -1)
+player_id = 2
+
+[node name="RoundedRect" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad3" index="0"]
+offset_left = 560.0
+offset_top = 350.0
+offset_right = 740.0
+offset_bottom = 530.0
+
+[node name="PercentageText" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad3/RoundedRect" index="0"]
+offset_left = -310.0
+offset_top = 13.3333
+offset_right = -230.0
+offset_bottom = 53.3333
+rotation = -0.785398
+scale = Vector2(-1, -1)
+
+[node name="PlayerName" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad3/RoundedRect" index="1"]
+scale = Vector2(-1, -1)
+
+[node name="ContentControl" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad3/RoundedRect" index="2"]
+scale = Vector2(1, -1)
+
+[node name="ProgressBarControl" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad3/RoundedRect/ContentControl" index="2"]
+scale = Vector2(-1, 1)
+
+[node name="PlayerPad4" parent="GameLayer/BoardSprite/PlayerPadsParent" instance=ExtResource("4_ormfq")]
+layout_mode = 1
+scale = Vector2(1, -1)
+player_id = 3
+
+[node name="RoundedRect" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad4" index="0"]
+offset_left = 560.0
+offset_top = 350.0
+offset_right = 740.0
+offset_bottom = 530.0
+
+[node name="PercentageText" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad4/RoundedRect" index="0"]
+offset_left = -310.0
+offset_top = 13.3333
+offset_right = -230.0
+offset_bottom = 53.3333
+rotation = -0.785398
+scale = Vector2(1, -1)
+
+[node name="PlayerName" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad4/RoundedRect" index="1"]
+scale = Vector2(1, -1)
+
+[node name="ContentControl" parent="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad4/RoundedRect" index="2"]
+scale = Vector2(1, -1)
+
+[node name="YardsParent" type="Control" parent="GameLayer/BoardSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Yard_Red" parent="GameLayer/BoardSprite/YardsParent" instance=ExtResource("5_gcq8b")]
+layout_mode = 1
+
+[node name="Yard_Blue" parent="GameLayer/BoardSprite/YardsParent" instance=ExtResource("5_gcq8b")]
+layout_mode = 1
+scale = Vector2(-1, 1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Blue/TileParent1" index="0"]
+offset_left = 349.0
+offset_top = 454.0
+offset_right = 387.0
+offset_bottom = 492.0
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Blue/TileParent3" index="0"]
+offset_left = 454.0
+offset_top = 350.0
+offset_right = 492.0
+offset_bottom = 388.0
+
+[node name="Yard_Yellow" parent="GameLayer/BoardSprite/YardsParent" instance=ExtResource("5_gcq8b")]
+layout_mode = 1
+scale = Vector2(-1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Yellow/TileParent1" index="0"]
+offset_left = 349.0
+offset_top = 452.0
+offset_right = 387.0
+offset_bottom = 490.0
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Yellow/TileParent2" index="0"]
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Yellow/TileParent3" index="0"]
+offset_left = 453.0
+offset_top = 349.0
+offset_right = 491.0
+offset_bottom = 387.0
+scale = Vector2(1, -1)
+
+[node name="Yard_Green" parent="GameLayer/BoardSprite/YardsParent" instance=ExtResource("5_gcq8b")]
+layout_mode = 1
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Green/TileParent1" index="0"]
+offset_left = 348.0
+offset_top = 453.0
+offset_right = 386.0
+offset_bottom = 491.0
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Green/TileParent2" index="0"]
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/YardsParent/Yard_Green/TileParent3" index="0"]
+offset_left = 452.0
+offset_top = 348.0
+offset_right = 490.0
+offset_bottom = 386.0
+scale = Vector2(1, -1)
+
+[node name="HomesParent" type="Control" parent="GameLayer/BoardSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Home_Red" parent="GameLayer/BoardSprite/HomesParent" instance=ExtResource("6_kurro")]
+layout_mode = 1
+
+[node name="Home_Blue" parent="GameLayer/BoardSprite/HomesParent" instance=ExtResource("6_kurro")]
+layout_mode = 1
+scale = Vector2(-1, 1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Blue/TileParent3" index="0"]
+offset_left = 53.0
+offset_top = 173.0
+offset_right = 103.0
+offset_bottom = 223.0
+
+[node name="Home_Yellow" parent="GameLayer/BoardSprite/HomesParent" instance=ExtResource("6_kurro")]
+layout_mode = 1
+scale = Vector2(-1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Yellow/TileParent1" index="0"]
+offset_left = 54.0
+offset_top = 54.0
+offset_right = 104.0
+offset_bottom = 104.0
+scale = Vector2(-1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Yellow/TileParent2" index="0"]
+offset_left = 171.0
+offset_top = 54.0
+offset_right = 221.0
+offset_bottom = 104.0
+scale = Vector2(-1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Yellow/TileParent3" index="0"]
+offset_left = 54.0
+offset_top = 166.0
+offset_right = 104.0
+offset_bottom = 216.0
+scale = Vector2(-1, -1)
+
+[node name="Home_Green" parent="GameLayer/BoardSprite/HomesParent" instance=ExtResource("6_kurro")]
+layout_mode = 1
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Green/TileParent1" index="0"]
+offset_top = 54.0
+offset_bottom = 104.0
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Green/TileParent2" index="0"]
+offset_left = 165.0
+offset_top = 54.0
+offset_right = 215.0
+offset_bottom = 104.0
+scale = Vector2(1, -1)
+
+[node name="Tile" parent="GameLayer/BoardSprite/HomesParent/Home_Green/TileParent3" index="0"]
+offset_top = 165.0
+offset_bottom = 215.0
+scale = Vector2(1, -1)
+
+[node name="SectorTilesParent" type="Control" parent="GameLayer/BoardSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="Button" parent="GameLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -155.0
+offset_right = 155.0
+offset_bottom = -35.0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("7_al07m")
+
+[node name="SettingsButton" type="Button" parent="GameLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -155.0
+offset_right = -35.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("9_4o4ra")
+
+[node name="DiceNodesParent" type="Control" parent="GameLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+scale = Vector2(1.05, 1.05)
+script = ExtResource("10_iqbgq")
+
+[node name="DicePad_Parent1" parent="GameLayer/DiceNodesParent" instance=ExtResource("11_6jxbv")]
+layout_mode = 1
+
+[node name="DicePad" parent="GameLayer/DiceNodesParent/DicePad_Parent1" index="0"]
+offset_left = -109.0
+offset_right = -109.0
+
+[node name="DicePointer" parent="GameLayer/DiceNodesParent/DicePad_Parent1/DicePad" index="2"]
+reversed = true
+
+[node name="DicePad_Parent2" parent="GameLayer/DiceNodesParent" instance=ExtResource("11_6jxbv")]
+layout_mode = 1
+pad_id = 1
+
+[node name="DicePad" parent="GameLayer/DiceNodesParent/DicePad_Parent2" index="0"]
+offset_left = 109.0
+offset_right = 109.0
+
+[node name="DiceScreen" type="TextureRect" parent="GameLayer/DiceNodesParent"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 550.0
+offset_right = 200.0
+offset_bottom = 730.0
+pivot_offset = Vector2(200, 90)
+expand_mode = 1
+
+[node name="DiceViewport" type="SubViewport" parent="GameLayer/DiceNodesParent"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(400, 180)
+render_target_update_mode = 4
+script = ExtResource("12_70dqw")
+
+[node name="DiceRender" parent="GameLayer/DiceNodesParent/DiceViewport" instance=ExtResource("13_vim7t")]
+
+[node name="PieceTypeLayer" parent="." instance=ExtResource("26_3ku1p")]
+visible = false
+
+[node name="OptionsLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("27_jhg18")
+
+[node name="Background" type="ColorRect" parent="OptionsLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.572549)
+
+[node name="OptionsPanel" type="NinePatchRect" parent="OptionsLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.0
+offset_top = -380.0
+offset_right = 410.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_yeycn")
+
+[node name="MenuBar" type="TextureRect" parent="OptionsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 140.0
+grow_horizontal = 2
+pivot_offset = Vector2(275, 70)
+texture = ExtResource("19_yuelb")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="OptionsLayer/OptionsPanel/MenuBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -55.5
+offset_right = 198.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 52.5)
+text = "SETTINGS"
+label_settings = ExtResource("21_7tbwf")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_SETTINGS"])
+font_size_ratios = {
+"FR": 0.84,
+"IT": 0.84,
+"PT": 0.74,
+"SP": 0.74
+}
+display_format = "UPPER"
+
+[node name="SoundControl" type="Control" parent="OptionsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -220.0
+offset_right = -70.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ToggleButton" type="CheckButton" parent="OptionsLayer/OptionsPanel/SoundControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -24.0
+offset_right = -127.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(44, 29)
+theme = ExtResource("28_1n2kf")
+text = "
+"
+icon_alignment = 1
+expand_icon = true
+
+[node name="SoundLabel" type="Label" parent="OptionsLayer/OptionsPanel/SoundControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -41.0
+offset_right = 224.0
+offset_bottom = 41.0
+grow_vertical = 2
+pivot_offset = Vector2(162, 41)
+text = "SOUND OFF
+"
+label_settings = ExtResource("28_201mx")
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+font_size_ratios = {
+"IT": 0.88,
+"SP": 0.94
+}
+display_format = "UPPER"
+
+[node name="AIModeControl" type="Control" parent="OptionsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -120.0
+offset_right = -70.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ToggleButton" type="CheckButton" parent="OptionsLayer/OptionsPanel/AIModeControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -24.0
+offset_right = -127.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(44, 29)
+theme = ExtResource("28_1n2kf")
+text = "
+"
+icon_alignment = 1
+expand_icon = true
+
+[node name="AIModeLabel" type="Label" parent="OptionsLayer/OptionsPanel/AIModeControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -41.0
+offset_right = 234.0
+offset_bottom = 41.0
+grow_vertical = 2
+pivot_offset = Vector2(167, 41)
+text = "HARD MODE"
+label_settings = ExtResource("28_201mx")
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_HARD_MODE"])
+font_size_ratios = {
+"IT": 0.88,
+"SP": 0.94
+}
+display_format = "UPPER"
+
+[node name="BlockingControl" type="Control" parent="OptionsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -20.0
+offset_right = -70.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ToggleButton" type="CheckButton" parent="OptionsLayer/OptionsPanel/BlockingControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -24.0
+offset_right = -127.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(44, 29)
+theme = ExtResource("28_1n2kf")
+text = "
+"
+icon_alignment = 1
+expand_icon = true
+
+[node name="BlockingLabel" type="Label" parent="OptionsLayer/OptionsPanel/BlockingControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -41.0
+offset_right = 234.0
+offset_bottom = 41.0
+grow_vertical = 2
+pivot_offset = Vector2(167, 41)
+text = "BLOCKING"
+label_settings = ExtResource("28_201mx")
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_BLOCKING"])
+font_size_ratios = {
+"IT": 0.88,
+"SP": 0.94
+}
+display_format = "UPPER"
+
+[node name="SliderContainer" type="NinePatchRect" parent="OptionsLayer/OptionsPanel"]
+self_modulate = Color(1, 1, 1, 0.439216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.5
+offset_top = 40.0
+offset_right = 357.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(357, 105)
+texture = ExtResource("33_2o1lo")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="SpeedLabel" type="Label" parent="OptionsLayer/OptionsPanel/SliderContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -100.0
+offset_right = 196.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+pivot_offset = Vector2(196, 41)
+text = "Game Speed"
+label_settings = ExtResource("22_cbfcw")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_GAME_SPEED"])
+
+[node name="SpeedSlider" type="HSlider" parent="OptionsLayer/OptionsPanel/SliderContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -24.0
+offset_right = 215.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.45, 1.45)
+pivot_offset = Vector2(215, 24)
+theme = ExtResource("29_bcg42")
+min_value = 0.1
+max_value = 0.6
+step = 0.01
+value = 0.2
+
+[node name="SlowLabel" type="Label" parent="OptionsLayer/OptionsPanel/SliderContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = 35.0
+offset_right = -200.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 25)
+text = "SLOW"
+label_settings = ExtResource("16_j4v52")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_SLOW"])
+display_format = "UPPER"
+
+[node name="FastLabel" type="Label" parent="OptionsLayer/OptionsPanel/SliderContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 202.5
+offset_top = 35.0
+offset_right = 302.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 25)
+text = "FAST"
+label_settings = ExtResource("16_j4v52")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_FAST"])
+display_format = "UPPER"
+
+[node name="DefaultsButton" parent="OptionsLayer/OptionsPanel" instance=ExtResource("24_rgn4m")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -160.0
+offset_right = 210.0
+offset_bottom = -50.0
+grow_vertical = 0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="OptionsLayer/OptionsPanel/DefaultsButton" index="0"]
+text = "Reset"
+translate_keys = Array[String](["T_RESET"])
+
+[node name="CloseButton" type="Button" parent="OptionsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 75.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("25_xnhlg")
+
+[node name="GameOverLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("30_5dmcx")
+
+[node name="Background" type="ColorRect" parent="GameOverLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.572549)
+
+[node name="GameOverPanel" type="NinePatchRect" parent="GameOverLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -520.0
+offset_right = 425.0
+offset_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(425, 520)
+texture = ExtResource("30_yeycn")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="TitleBar" type="TextureRect" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = -65.0
+offset_right = 350.0
+offset_bottom = 100.0
+grow_horizontal = 2
+pivot_offset = Vector2(350, 82)
+texture = ExtResource("32_7mig0")
+expand_mode = 1
+
+[node name="GameOverLabel" type="Label" parent="GameOverLayer/GameOverPanel/TitleBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 8.0
+offset_right = 260.0
+offset_bottom = 128.0
+grow_horizontal = 2
+pivot_offset = Vector2(260, 60)
+text = "GAME OVER"
+label_settings = ExtResource("21_7tbwf")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_GAME_OVER"])
+font_size_ratios = {
+"AR": 0.95,
+"EN": 0.95,
+"FR": 0.9,
+"HI": 0.95,
+"IT": 0.95,
+"JP": 0.95,
+"PT": 0.95,
+"SP": 0.65
+}
+display_format = "UPPER"
+
+[node name="TintBackground" type="TextureRect" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.0
+offset_top = -390.0
+offset_right = 366.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(366, 366)
+texture = ExtResource("33_2o1lo")
+expand_mode = 1
+
+[node name="HeaderBar" type="TextureRect" parent="GameOverLayer/GameOverPanel/TintBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -366.0
+offset_top = 36.0
+offset_right = 366.0
+offset_bottom = 120.0
+grow_horizontal = 2
+texture = ExtResource("34_h8mab")
+expand_mode = 1
+
+[node name="RankLabel" type="Label" parent="GameOverLayer/GameOverPanel/TintBackground/HeaderBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 245.0
+offset_bottom = 40.0
+grow_vertical = 2
+text = "RANK"
+label_settings = ExtResource("35_qgqr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_RANK"])
+font_size_ratios = {
+"HI": 0.9,
+"PT": 0.85,
+"SP": 0.85
+}
+display_format = "UPPER"
+
+[node name="NameLabel" type="Label" parent="GameOverLayer/GameOverPanel/TintBackground/HeaderBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -40.0
+offset_right = 114.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NAME"
+label_settings = ExtResource("35_qgqr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_NAME"])
+font_size_ratios = {
+"HI": 0.9,
+"PT": 0.85,
+"SP": 0.85
+}
+display_format = "UPPER"
+
+[node name="PlayerListItem1" parent="GameOverLayer/GameOverPanel" instance=ExtResource("38_ang3r")]
+layout_mode = 1
+offset_top = -180.0
+offset_bottom = -180.0
+
+[node name="PlayerListItem2" parent="GameOverLayer/GameOverPanel" instance=ExtResource("38_ang3r")]
+layout_mode = 1
+offset_top = -35.0
+offset_bottom = -35.0
+
+[node name="PlayerListItem3" parent="GameOverLayer/GameOverPanel" instance=ExtResource("38_ang3r")]
+layout_mode = 1
+offset_top = 110.0
+offset_bottom = 110.0
+
+[node name="PlayerListItem4" parent="GameOverLayer/GameOverPanel" instance=ExtResource("38_ang3r")]
+layout_mode = 1
+offset_top = 255.0
+offset_bottom = 255.0
+
+[node name="PlayerDisconnectedTint" type="NinePatchRect" parent="GameOverLayer/GameOverPanel"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.470588)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -55.0
+offset_right = 330.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(330, 55)
+texture = ExtResource("36_wbq1y")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="PlayerDisconnectedLabel" type="Label" parent="GameOverLayer/GameOverPanel/PlayerDisconnectedTint"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -34.5
+offset_right = 313.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(313, 36)
+text = "T_PLAYER_DISCONNECTED"
+label_settings = ExtResource("35_3jhnx")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_jwjyv")
+translate_keys = Array[String](["T_PLAYER_DISCONNECTED"])
+display_format = "UPPER"
+
+[node name="MainMenuButton" parent="GameOverLayer/GameOverPanel" instance=ExtResource("24_rgn4m")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -155.0
+offset_right = 200.0
+offset_bottom = -45.0
+grow_vertical = 0
+pivot_offset = Vector2(200, 55)
+
+[node name="Label" parent="GameOverLayer/GameOverPanel/MainMenuButton" index="0"]
+text = "Main Menu"
+translate_keys = Array[String](["T_MAIN_MENU"])
+font_size_ratios = {
+"AR": 0.95,
+"FR": 0.95,
+"HI": 0.95,
+"IT": 0.9,
+"JP": 0.92,
+"PT": 0.95,
+"SP": 0.95
+}
+
+[node name="CloseButton" type="Button" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 75.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("25_xnhlg")
+
+[editable path="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad1"]
+[editable path="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad2"]
+[editable path="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad3"]
+[editable path="GameLayer/BoardSprite/PlayerPadsParent/PlayerPad4"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Red"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Red/TileParent1"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Red/TileParent2"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Red/TileParent3"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Blue"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Blue/TileParent1"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Blue/TileParent2"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Blue/TileParent3"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Yellow"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Yellow/TileParent1"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Yellow/TileParent2"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Yellow/TileParent3"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Green"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Green/TileParent1"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Green/TileParent2"]
+[editable path="GameLayer/BoardSprite/YardsParent/Yard_Green/TileParent3"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Red"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Red/TileParent1"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Red/TileParent2"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Red/TileParent3"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Blue"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Blue/TileParent1"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Blue/TileParent2"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Blue/TileParent3"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Yellow"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Yellow/TileParent1"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Yellow/TileParent2"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Yellow/TileParent3"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Green"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Green/TileParent1"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Green/TileParent2"]
+[editable path="GameLayer/BoardSprite/HomesParent/Home_Green/TileParent3"]
+[editable path="GameLayer/DiceNodesParent/DicePad_Parent1"]
+[editable path="GameLayer/DiceNodesParent/DicePad_Parent2"]
+[editable path="PieceTypeLayer"]
+[editable path="OptionsLayer/OptionsPanel/DefaultsButton"]
+[editable path="GameOverLayer/GameOverPanel/MainMenuButton"]

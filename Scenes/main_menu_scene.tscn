@@ -1,0 +1,962 @@
+[gd_scene load_steps=31 format=3 uid="uid://be4dylnv68acp"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenuHandler.gd" id="1_s1vul"]
+[ext_resource type="Texture2D" uid="uid://dugnduj8bvepc" path="res://Sprites/WoodImageClear.png" id="2_hkqrt"]
+[ext_resource type="Texture2D" uid="uid://b1rd87i6t0vfc" path="res://Sprites/KETTII.png" id="3_3v58u"]
+[ext_resource type="Texture2D" uid="uid://bfrb3k4q4f7oe" path="res://Sprites/BoardSprite.png" id="3_i5a6q"]
+[ext_resource type="PackedScene" uid="uid://cxblihhw51h1g" path="res://Prefabs/flare.tscn" id="4_ljx0d"]
+[ext_resource type="Texture2D" uid="uid://s8ss86nr75h6" path="res://Sprites/ButtonHighlight.png" id="6_e0a2j"]
+[ext_resource type="Script" path="res://Scripts/MainMenuSettingsLogic.gd" id="8_2fjuw"]
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="8_4gnrk"]
+[ext_resource type="PackedScene" uid="uid://bilova07og8dh" path="res://Prefabs/long_button.tscn" id="8_6vah7"]
+[ext_resource type="Theme" uid="uid://cvw4xctkkuhop" path="res://Themes/close_button_theme.tres" id="8_mwhid"]
+[ext_resource type="Theme" uid="uid://dxsk080uwrgs2" path="res://Themes/back_button_theme.tres" id="8_q03at"]
+[ext_resource type="Theme" uid="uid://c3l1hxnyxmmnq" path="res://Themes/logout_button_theme.tres" id="9_kovan"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="10_87p8x"]
+[ext_resource type="Script" path="res://Scripts/MainMenuExitLogic.gd" id="11_dm5mk"]
+[ext_resource type="Texture2D" uid="uid://cyh4x57u1r6oo" path="res://Sprites/MenuPanelBlue.png" id="16_lt1ae"]
+[ext_resource type="LabelSettings" uid="uid://3nykbktgjcg5" path="res://Themes/menu_title_label_settings.tres" id="16_o3y0m"]
+[ext_resource type="Texture2D" uid="uid://887bcyf0htyf" path="res://Sprites/MenuTitleBar.png" id="16_wraav"]
+[ext_resource type="Script" path="res://Scripts/LanguageSelectHandler.gd" id="19_sxoix"]
+[ext_resource type="PackedScene" uid="uid://bo0slhnbxrpil" path="res://Prefabs/clear_button.tscn" id="21_dn1tp"]
+[ext_resource type="Texture2D" uid="uid://bltdima5nqbbx" path="res://Sprites/MenuPanelPurple.png" id="21_xb3va"]
+[ext_resource type="LabelSettings" uid="uid://divopdpp43654" path="res://Themes/header_label_settings_64.tres" id="24_3cb8u"]
+[ext_resource type="Script" path="res://Scripts/AboutUsPanelHandler.gd" id="24_ly6jg"]
+[ext_resource type="LabelSettings" uid="uid://c7ldrj4kjek2o" path="res://Themes/normal_label_settings_dark_64.tres" id="25_2rray"]
+[ext_resource type="LabelSettings" uid="uid://bw5ej8e66fclj" path="res://Themes/tiny_label_settings.tres" id="25_b2nxl"]
+
+[sub_resource type="Gradient" id="Gradient_naqi8"]
+colors = PackedColorArray(0, 0, 0, 0.901961, 0, 0, 0, 0.196078)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a55ms"]
+gradient = SubResource("Gradient_naqi8")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exbmr"]
+radius = 280.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b14a3"]
+radius = 200.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n86mf"]
+radius = 75.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2v1o"]
+font = ExtResource("8_4gnrk")
+font_size = 48
+outline_size = 1
+
+[node name="MenuNode2D" type="Node2D"]
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_s1vul")
+
+[node name="BackgroundContainer" type="Control" parent="MenuLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WoodWorkTexture" type="TextureRect" parent="MenuLayer/BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hkqrt")
+expand_mode = 1
+
+[node name="BackgroundTexture" type="TextureRect" parent="MenuLayer/BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_a55ms")
+expand_mode = 1
+
+[node name="FlaresControl" type="Control" parent="MenuLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Flare1" parent="MenuLayer/FlaresControl" instance=ExtResource("4_ljx0d")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 140.0
+offset_top = 165.0
+offset_right = 440.0
+offset_bottom = 465.0
+grow_horizontal = 1
+grow_vertical = 1
+rate_scalar = 22.0
+
+[node name="Flare2" parent="MenuLayer/FlaresControl" instance=ExtResource("4_ljx0d")]
+layout_mode = 1
+offset_left = -400.0
+offset_right = 200.0
+offset_bottom = 450.0
+
+[node name="Area2D" parent="MenuLayer/FlaresControl/Flare2" index="0"]
+position = Vector2(300, 300)
+
+[node name="CollisionShape2D" parent="MenuLayer/FlaresControl/Flare2/Area2D" index="0"]
+shape = SubResource("CircleShape2D_exbmr")
+
+[node name="Flare3" parent="MenuLayer/FlaresControl" instance=ExtResource("4_ljx0d")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -44.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 316.0
+grow_vertical = 1
+rate_scalar = 22.0
+
+[node name="Flare4" parent="MenuLayer/FlaresControl" instance=ExtResource("4_ljx0d")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -480.0
+offset_right = -60.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+rate_scalar = 18.0
+
+[node name="Area2D" parent="MenuLayer/FlaresControl/Flare4" index="0"]
+position = Vector2(200, 200)
+
+[node name="CollisionShape2D" parent="MenuLayer/FlaresControl/Flare4/Area2D" index="0"]
+shape = SubResource("CircleShape2D_b14a3")
+
+[node name="Flare5" parent="MenuLayer/FlaresControl" instance=ExtResource("4_ljx0d")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = -180.0
+offset_right = 310.0
+offset_bottom = -30.0
+grow_horizontal = 1
+grow_vertical = 0
+rate_scalar = 24.0
+
+[node name="Area2D" parent="MenuLayer/FlaresControl/Flare5" index="0"]
+position = Vector2(75, 75)
+
+[node name="CollisionShape2D" parent="MenuLayer/FlaresControl/Flare5/Area2D" index="0"]
+shape = SubResource("CircleShape2D_n86mf")
+
+[node name="LPanel" type="Control" parent="MenuLayer"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_right = 824.0
+offset_bottom = 540.0
+grow_vertical = 2
+pivot_offset = Vector2(362, 540)
+
+[node name="KettiiImage" type="TextureRect" parent="MenuLayer/LPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -430.0
+offset_right = 257.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(257, 67)
+texture = ExtResource("3_3v58u")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="ButtonI" parent="MenuLayer/LPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -205.0
+offset_top = -240.0
+offset_right = 205.0
+offset_bottom = -130.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="MenuLayer/LPanel/ButtonI" index="0"]
+offset_left = -125.5
+offset_right = 125.5
+text = "NEW GAME"
+translate_keys = Array[String](["T_NEW_GAME"])
+font_size_ratios = {
+"HI": 0.9
+}
+display_format = "UPPER"
+
+[node name="ButtonII" parent="MenuLayer/LPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -205.0
+offset_top = -110.0
+offset_right = 205.0
+offset_bottom = 0.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="MenuLayer/LPanel/ButtonII" index="0"]
+offset_left = -125.5
+offset_right = 125.5
+text = "RESUME"
+translate_keys = Array[String](["T_RESUME"])
+font_size_ratios = {
+"HI": 0.9
+}
+display_format = "UPPER"
+
+[node name="ButtonIII" parent="MenuLayer/LPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -205.0
+offset_top = 30.0
+offset_right = 205.0
+offset_bottom = 140.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="MenuLayer/LPanel/ButtonIII" index="0"]
+offset_left = -125.5
+offset_right = 125.5
+text = "SETTINGS"
+translate_keys = Array[String](["T_SETTINGS"])
+font_size_ratios = {
+"HI": 0.9
+}
+display_format = "UPPER"
+
+[node name="ButtonIV" parent="MenuLayer/LPanel" instance=ExtResource("8_6vah7")]
+visible = false
+self_modulate = Color(0.776471, 0.776471, 0.776471, 1)
+layout_mode = 1
+offset_left = -175.0
+offset_top = 170.0
+offset_right = 175.0
+offset_bottom = 280.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="MenuLayer/LPanel/ButtonIV" index="0"]
+offset_left = -125.5
+offset_right = 125.5
+text = "EXIT"
+translate_keys = Array[String](["T_EXIT"])
+font_size_ratios = {
+"HI": 0.9
+}
+display_format = "UPPER"
+
+[node name="VersionControl" type="Control" parent="MenuLayer/LPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MenuLayer/LPanel/VersionControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -196.0
+offset_right = 127.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+pivot_offset = Vector2(127, 35)
+text = "Version 1.0
+"
+label_settings = SubResource("LabelSettings_c2v1o")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_VERSION_ENUM"])
+enumeration_bind = "0.1"
+
+[node name="EscButtonsControl" type="Control" parent="MenuLayer/LPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="MenuLayer/LPanel/EscButtonsControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -168.0
+offset_right = 168.0
+offset_bottom = -48.0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("8_q03at")
+
+[node name="ExitButton" type="Button" parent="MenuLayer/LPanel/EscButtonsControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -168.0
+offset_right = 168.0
+offset_bottom = -48.0
+grow_vertical = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("9_kovan")
+
+[node name="RPanel" type="Control" parent="MenuLayer"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1024.0
+offset_top = -480.0
+offset_right = -64.0
+offset_bottom = 480.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BoardWork" type="TextureRect" parent="MenuLayer/RPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -350.0
+offset_right = 350.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i5a6q")
+expand_mode = 1
+
+[node name="ButtonHighlightElement" type="TextureRect" parent="MenuLayer"]
+self_modulate = Color(0.443137, 0.968627, 0.623529, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -766.0
+offset_top = -253.0
+offset_right = -330.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(218, 68)
+texture = ExtResource("6_e0a2j")
+expand_mode = 1
+
+[node name="SettingsLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("8_2fjuw")
+
+[node name="Background" type="ColorRect" parent="SettingsLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.572549)
+
+[node name="OptionsPanel" type="NinePatchRect" parent="SettingsLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.5
+offset_top = -386.0
+offset_right = 358.5
+offset_bottom = 374.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 400)
+texture = ExtResource("16_lt1ae")
+
+[node name="MenuBar" type="TextureRect" parent="SettingsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 140.0
+grow_horizontal = 2
+pivot_offset = Vector2(275, 70)
+texture = ExtResource("16_wraav")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="SettingsLayer/OptionsPanel/MenuBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -55.5
+offset_right = 198.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 52.5)
+text = "SETTINGS"
+label_settings = ExtResource("16_o3y0m")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_SETTINGS"])
+font_size_ratios = {
+"FR": 0.84,
+"IT": 0.84,
+"PT": 0.74,
+"SP": 0.74
+}
+display_format = "UPPER"
+
+[node name="TutorialsButton" parent="SettingsLayer/OptionsPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = -226.0
+offset_right = 200.0
+offset_bottom = -118.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="SettingsLayer/OptionsPanel/TutorialsButton" index="0"]
+text = "Tutorials"
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_TUTORIALS"])
+font_size_ratios = {
+"AR": 0.9,
+"JP": 0.85,
+"SP": 0.9
+}
+
+[node name="LanguagesButton" parent="SettingsLayer/OptionsPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = -96.0
+offset_right = 200.0
+offset_bottom = 12.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="SettingsLayer/OptionsPanel/LanguagesButton" index="0"]
+text = "Languages"
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_LANGUAGES"])
+font_size_ratios = {
+"JP": 0.85,
+"SP": 0.9
+}
+
+[node name="FeedbackButton" parent="SettingsLayer/OptionsPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = 34.0
+offset_right = 200.0
+offset_bottom = 142.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="SettingsLayer/OptionsPanel/FeedbackButton" index="0"]
+text = "Feedback"
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_FEEDBACK"])
+font_size_ratios = {
+"JP": 0.85,
+"SP": 0.9
+}
+
+[node name="AboutUsButton" parent="SettingsLayer/OptionsPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+offset_left = -200.0
+offset_top = 164.0
+offset_right = 200.0
+offset_bottom = 272.0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="SettingsLayer/OptionsPanel/AboutUsButton" index="0"]
+text = "About Us"
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_ABOUT_US"])
+font_size_ratios = {
+"JP": 0.85,
+"SP": 0.9
+}
+
+[node name="CloseButton" type="Button" parent="SettingsLayer/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("8_mwhid")
+
+[node name="LanguagePanel" type="NinePatchRect" parent="SettingsLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_xb3va")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("19_sxoix")
+
+[node name="ButtonEnglish" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = -320.0
+offset_top = -170.0
+offset_right = -24.0
+offset_bottom = -94.0
+
+[node name="ButtonFrench" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = 24.0
+offset_top = -170.0
+offset_right = 320.0
+offset_bottom = -94.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonFrench" index="0"]
+text = "Le Français"
+
+[node name="ButtonSpanish" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = -320.0
+offset_top = -85.0
+offset_right = -24.0
+offset_bottom = -9.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonSpanish" index="0"]
+text = "Español"
+
+[node name="ButtonHindi" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = 24.0
+offset_top = -85.0
+offset_right = 320.0
+offset_bottom = -9.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonHindi" index="0"]
+text = "हिन्दी
+"
+
+[node name="ButtonArabic" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = -320.0
+offset_top = 0.0
+offset_right = -24.0
+offset_bottom = 76.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonArabic" index="0"]
+text = "عربي"
+language = "ar"
+
+[node name="ButtonItalian" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 0.0
+offset_right = 320.0
+offset_bottom = 76.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonItalian" index="0"]
+text = "Italiano"
+
+[node name="ButtonPortuguese" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = -320.0
+offset_top = 85.0
+offset_right = -24.0
+offset_bottom = 161.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonPortuguese" index="0"]
+text = "Português"
+
+[node name="ButtonJapanese" parent="SettingsLayer/LanguagePanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 85.0
+offset_right = 320.0
+offset_bottom = 161.0
+
+[node name="Label" parent="SettingsLayer/LanguagePanel/ButtonJapanese" index="0"]
+text = "日本語"
+
+[node name="CloseButton" type="Button" parent="SettingsLayer/LanguagePanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("8_mwhid")
+
+[node name="AboutUsPanel" type="NinePatchRect" parent="SettingsLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_xb3va")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("24_ly6jg")
+
+[node name="RightsReservedLabel" type="Label" parent="SettingsLayer/AboutUsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -202.0
+offset_right = 332.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(332, 64)
+text = "© Anileconn
+All Rights Reserved"
+label_settings = ExtResource("24_3cb8u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPrivacyPolicy" parent="SettingsLayer/AboutUsPanel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+offset_left = -180.0
+offset_top = 25.0
+offset_right = 180.0
+offset_bottom = 103.0
+pivot_offset = Vector2(180, 39)
+
+[node name="Label" parent="SettingsLayer/AboutUsPanel/ButtonPrivacyPolicy" index="0"]
+offset_left = -162.0
+offset_right = 162.0
+text = "Privacy Policy"
+
+[node name="Underline" type="ColorRect" parent="SettingsLayer/AboutUsPanel/ButtonPrivacyPolicy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 33.0
+offset_right = 160.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.890196, 1, 1, 1)
+
+[node name="MadeWithGodotContainer" type="Control" parent="SettingsLayer/AboutUsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MadeWithLabel" type="Label" parent="SettingsLayer/AboutUsPanel/MadeWithGodotContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -25.0
+offset_right = 44.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made with "
+label_settings = ExtResource("25_b2nxl")
+vertical_alignment = 1
+
+[node name="ButtonGodotLink" parent="SettingsLayer/AboutUsPanel/MadeWithGodotContainer/MadeWithLabel" instance=ExtResource("21_dn1tp")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = -25.0
+offset_right = 94.0
+offset_bottom = 25.0
+grow_horizontal = 0
+pivot_offset = Vector2(180, 39)
+
+[node name="Label" parent="SettingsLayer/AboutUsPanel/MadeWithGodotContainer/MadeWithLabel/ButtonGodotLink" index="0"]
+offset_left = -48.0
+offset_top = -25.0
+offset_right = 48.0
+offset_bottom = 25.0
+text = "Godot"
+label_settings = ExtResource("25_b2nxl")
+
+[node name="Underline" type="ColorRect" parent="SettingsLayer/AboutUsPanel/MadeWithGodotContainer/MadeWithLabel/ButtonGodotLink"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 17.0
+offset_right = 45.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.890196, 1, 1, 1)
+
+[node name="CloseButton" type="Button" parent="SettingsLayer/AboutUsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("8_mwhid")
+
+[node name="ExitLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("11_dm5mk")
+
+[node name="Background" type="ColorRect" parent="ExitLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.572549)
+
+[node name="ExitPanel" type="NinePatchRect" parent="ExitLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -250.0
+offset_right = 425.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(400, 250)
+texture = ExtResource("16_lt1ae")
+patch_margin_left = 36
+patch_margin_top = 36
+patch_margin_right = 36
+patch_margin_bottom = 36
+
+[node name="MenuBar" type="TextureRect" parent="ExitLayer/ExitPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 120.0
+grow_horizontal = 2
+texture = ExtResource("16_wraav")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="ExitLayer/ExitPanel/MenuBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -48.0
+offset_right = 150.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 52.5)
+text = "EXIT"
+label_settings = ExtResource("16_o3y0m")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_EXIT"])
+font_size_ratios = {
+"FR": 0.9,
+"IT": 0.85,
+"PT": 0.82,
+"SP": 0.85
+}
+display_format = "UPPER"
+
+[node name="YesButton" parent="ExitLayer/ExitPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -159.0
+offset_right = 354.0
+offset_bottom = -64.0
+grow_horizontal = 1
+grow_vertical = 0
+pivot_offset = Vector2(160, 50)
+
+[node name="Label" parent="ExitLayer/ExitPanel/YesButton" index="0"]
+text = "YES
+"
+translate_keys = Array[String](["T_YES"])
+font_size_ratios = {
+"HI": 0.9
+}
+
+[node name="NoButton" parent="ExitLayer/ExitPanel" instance=ExtResource("8_6vah7")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -354.0
+offset_top = -159.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(210, 55)
+
+[node name="Label" parent="ExitLayer/ExitPanel/NoButton" index="0"]
+text = "NO"
+translate_keys = Array[String](["T_NO"])
+font_size_ratios = {
+"HI": 0.9
+}
+
+[node name="ExitText" type="Label" parent="ExitLayer/ExitPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -90.0
+offset_right = 300.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(300, 62)
+text = "Leave Game?"
+label_settings = ExtResource("25_2rray")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_87p8x")
+translate_keys = Array[String](["T_LEAVE_GAME_QN"])
+font_size_ratios = {
+"JP": 0.85
+}
+
+[editable path="MenuLayer/FlaresControl/Flare2"]
+[editable path="MenuLayer/FlaresControl/Flare4"]
+[editable path="MenuLayer/FlaresControl/Flare5"]
+[editable path="MenuLayer/LPanel/ButtonI"]
+[editable path="MenuLayer/LPanel/ButtonII"]
+[editable path="MenuLayer/LPanel/ButtonIII"]
+[editable path="MenuLayer/LPanel/ButtonIV"]
+[editable path="SettingsLayer/OptionsPanel/TutorialsButton"]
+[editable path="SettingsLayer/OptionsPanel/LanguagesButton"]
+[editable path="SettingsLayer/OptionsPanel/FeedbackButton"]
+[editable path="SettingsLayer/OptionsPanel/AboutUsButton"]
+[editable path="SettingsLayer/LanguagePanel/ButtonEnglish"]
+[editable path="SettingsLayer/LanguagePanel/ButtonFrench"]
+[editable path="SettingsLayer/LanguagePanel/ButtonSpanish"]
+[editable path="SettingsLayer/LanguagePanel/ButtonHindi"]
+[editable path="SettingsLayer/LanguagePanel/ButtonArabic"]
+[editable path="SettingsLayer/LanguagePanel/ButtonItalian"]
+[editable path="SettingsLayer/LanguagePanel/ButtonPortuguese"]
+[editable path="SettingsLayer/LanguagePanel/ButtonJapanese"]
+[editable path="SettingsLayer/AboutUsPanel/ButtonPrivacyPolicy"]
+[editable path="SettingsLayer/AboutUsPanel/MadeWithGodotContainer/MadeWithLabel/ButtonGodotLink"]
+[editable path="ExitLayer/ExitPanel/YesButton"]
+[editable path="ExitLayer/ExitPanel/NoButton"]

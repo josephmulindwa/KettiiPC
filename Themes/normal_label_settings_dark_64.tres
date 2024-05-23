@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c7ldrj4kjek2o"]
+
+[ext_resource type="FontFile" uid="uid://ccn6w20jg1i2c" path="res://Resources/FallingSky.otf" id="1_imome"]
+
+[resource]
+font = ExtResource("1_imome")
+font_size = 64
+font_color = Color(0.364706, 0.364706, 0.364706, 1)

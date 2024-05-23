@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://d224kt1m3ap1x"]
+
+[ext_resource type="Texture2D" uid="uid://bltdima5nqbbx" path="res://Sprites/MenuPanelPurple.png" id="1_g06n5"]
+[ext_resource type="Script" path="res://Scripts/TutorialPanelHandler.gd" id="2_v5qo0"]
+[ext_resource type="LabelSettings" uid="uid://co35nvxgodayu" path="res://Themes/normal_label_settings_72.tres" id="3_8m7un"]
+[ext_resource type="Script" path="res://Scripts/TranslateHandler.gd" id="4_0gb4i"]
+[ext_resource type="PackedScene" uid="uid://bo0slhnbxrpil" path="res://Prefabs/clear_button.tscn" id="5_p65dj"]
+[ext_resource type="LabelSettings" uid="uid://bw5ej8e66fclj" path="res://Themes/tiny_label_settings.tres" id="6_ppk2n"]
+[ext_resource type="Theme" uid="uid://cvw4xctkkuhop" path="res://Themes/close_button_theme.tres" id="7_uus7f"]
+
+[node name="TutorialsLayer" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.572549)
+
+[node name="TutorialPanel" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g06n5")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_v5qo0")
+
+[node name="WatchTutorialLabel" type="Label" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -202.0
+offset_right = 332.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(332, 64)
+text = "Watch Tutorial"
+label_settings = ExtResource("3_8m7un")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_0gb4i")
+translate_keys = Array[String](["T_WATCH_TUTORIAL"])
+font_size_ratios = {
+"AR": 0.96
+}
+
+[node name="ButtonTutorialsLink" parent="TutorialPanel" instance=ExtResource("5_p65dj")]
+layout_mode = 1
+offset_left = -180.0
+offset_top = -39.0
+offset_right = 180.0
+offset_bottom = 39.0
+pivot_offset = Vector2(180, 39)
+
+[node name="Label" parent="TutorialPanel/ButtonTutorialsLink" index="0"]
+offset_left = -162.0
+offset_right = 162.0
+text = "Go To Tutorials"
+script = ExtResource("4_0gb4i")
+translate_keys = Array[String](["T_GO_TO_TUTORIALS"])
+font_size_ratios = {
+"AR": 0.64,
+"FR": 0.9,
+"HI": 0.9,
+"JP": 0.9,
+"PT": 0.96
+}
+
+[node name="Underline" type="ColorRect" parent="TutorialPanel/ButtonTutorialsLink"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = 33.0
+offset_right = 170.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.890196, 1, 1, 1)
+
+[node name="YouCanFindTutorialsMessage" type="Control" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FindTutorialsLabel" type="Label" parent="TutorialPanel/YouCanFindTutorialsMessage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -72.0
+offset_right = 290.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(290, 72)
+text = "You can also find tutorials under Main Menu > Settings > Tutorials"
+label_settings = ExtResource("6_ppk2n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("4_0gb4i")
+translate_keys = Array[String](["T_YOU_CAN_FIND_TUTORIALS_UNDER"])
+
+[node name="CloseButton" type="Button" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(60, 60)
+theme = ExtResource("7_uus7f")
+
+[editable path="TutorialPanel/ButtonTutorialsLink"]

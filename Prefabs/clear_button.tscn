@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo0slhnbxrpil"]
+
+[ext_resource type="Theme" uid="uid://c752yjo0wfp2c" path="res://Themes/clear_button_theme.tres" id="1_mefv3"]
+[ext_resource type="LabelSettings" uid="uid://yxai1ygyu4t2" path="res://Themes/text_label_settings_00.tres" id="2_tlcpe"]
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -38.0
+offset_right = 148.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(148, 38)
+theme = ExtResource("1_mefv3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -38.0
+offset_right = 148.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(148, 38)
+text = "English"
+label_settings = ExtResource("2_tlcpe")
+horizontal_alignment = 1
+vertical_alignment = 1

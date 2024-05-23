@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bilova07og8dh"]
+
+[ext_resource type="Theme" uid="uid://ct18sdqd68l82" path="res://Themes/long_button_theme.tres" id="1_oro6a"]
+[ext_resource type="Script" path="res://Scripts/ButtonThemeHandler.gd" id="3_tkrjs"]
+[ext_resource type="LabelSettings" uid="uid://ck83cb5l1pqoo" path="res://Themes/button_label_settings.tres" id="3_tv7qb"]
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = 520.0
+offset_right = 230.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(230, 60)
+theme = ExtResource("1_oro6a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -36.0
+offset_right = 49.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 55)
+text = "Text"
+label_settings = ExtResource("3_tv7qb")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_tkrjs")

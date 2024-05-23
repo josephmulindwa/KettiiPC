@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://1a33whwxvtek"]
+
+[ext_resource type="Script" path="res://Scripts/Tile.gd" id="1_563i7"]
+
+[node name="TileParent" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_563i7")
+
+[node name="Tile" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 276.0
+offset_top = -20.0
+offset_right = 316.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+color = Color(0, 0, 0, 0)
+
+[node name="Node2D" type="Node2D" parent="Tile"]

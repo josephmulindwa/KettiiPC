@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cxvjsb2vdr58o"]
+
+[ext_resource type="FontFile" uid="uid://qo082h3287m3" path="res://Resources/FallingSkyBd.otf" id="1_wsw5s"]
+
+[resource]
+font = ExtResource("1_wsw5s")
+font_size = 64
+font_color = Color(0.364706, 0.364706, 0.364706, 1)
