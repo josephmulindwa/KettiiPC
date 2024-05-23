@@ -30,10 +30,5 @@ signal pause_sound;
 signal trigger_roll(presets, rpc);
 signal trigger_reset_roll;
 
-signal show_rewarded_ad;
-signal show_interstitial_ad;
-signal reset_ads_timer;
-signal reward_ad_availability_status_changed(available, reward);
-
 func _ready():
 	name="Events";

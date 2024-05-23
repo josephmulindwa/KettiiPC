@@ -36,11 +36,6 @@ func _initialize_statehandler():
 
 func _ready():
 	get_tree().set_quit_on_go_back(false); # disable back button
-	
-	# if config is faulty, disable save so that config is recreated
-	if(!GameDataManager.CONFIGDATA.loaded):
-		GameDataManager.clear_savedata();
-
 	Parameter.reset_game_state();
 	MultiplayerConnectHandler.reset_networking();
 	update_version_text();
@@ -223,7 +218,7 @@ func _button_event_callback():
 	previous_active_button_index=-1;
 
 func _process(_delta):
-	board_texture.visible=main_menu_context;
+	#board_texture.visible=main_menu_context;
 	_update_active_button_render();
 	logout_button.visible=(main_menu_context);
 	back_button.visible=!(main_menu_context);

@@ -356,6 +356,7 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="BoardWork" type="TextureRect" parent="MenuLayer/RPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -412,6 +413,7 @@ offset_right = 358.5
 offset_bottom = 374.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.95, 0.95)
 pivot_offset = Vector2(400, 400)
 texture = ExtResource("16_lt1ae")
 
@@ -551,6 +553,7 @@ offset_right = 400.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.95, 0.95)
 texture = ExtResource("21_xb3va")
 patch_margin_left = 16
 patch_margin_top = 16
@@ -663,6 +666,7 @@ offset_right = 400.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.95, 0.95)
 texture = ExtResource("21_xb3va")
 patch_margin_left = 16
 patch_margin_top = 16

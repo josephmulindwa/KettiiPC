@@ -6,6 +6,7 @@ var _queue_freeables:Array=[];
 func _ready():
 	streams={
 		"GAME_OVER":{"obj":null, "res":"game_over_soundfx"},
+		"GAME_ENDED":{"obj":null, "res":"game_ended_soundfx"},
 		"PIECE_MOVE":{"obj":null, "res":"piece_move_soundfx"},
 		"PIECE_EXPLODE":{"obj":null, "res":"piece_collide_soundfx"},
 		"DICE_ROLL":{"obj":null, "res":"dice_roll_soundfx"},

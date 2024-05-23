@@ -2,6 +2,7 @@ extends Node
 
 var close_button;
 var ai_mode_toggle_button;
+var blocking_toggle_button;
 var sound_toggle_button;
 var sound_toggle_label;
 var speed_slider;
@@ -13,6 +14,7 @@ func _ready():
 	self.visible=false;
 	close_button=$OptionsPanel/CloseButton;
 	ai_mode_toggle_button=$OptionsPanel/AIModeControl/ToggleButton;
+	blocking_toggle_button=$OptionsPanel/BlockingControl/ToggleButton;
 	sound_toggle_button=$OptionsPanel/SoundControl/ToggleButton;
 	sound_toggle_label=$OptionsPanel/SoundControl/SoundLabel;
 	speed_slider=$OptionsPanel/SliderContainer/SpeedSlider;
@@ -22,6 +24,8 @@ func _ready():
 	if (GameDataManager.SAVEDATA.active_game_mode==Parameter.GAME_MODE.ONLINE):
 		var _sp=GameDataManager.CONFIGDATA.default_game_speed;
 		GameDataManager.CONFIGDATA.set_game_speed(_sp);
+		ai_mode_toggle_button.disabled=true;
+		blocking_toggle_button.disabled=true;
 		speed_slider.editable=false;
 	
 	Events.trigger_close_panel.connect(_on_close_button_pressed);
@@ -33,6 +37,7 @@ func _ready():
 	
 	defaults_button.pressed.connect(_on_defaults_button_pressed);
 	speed_slider.drag_ended.connect(_on_speed_slider_drag_ended);
+	blocking_toggle_button.pressed.connect(_on_blocking_toggle_button_pressed);
 	sound_toggle_button.pressed.connect(_on_sound_toggle_button_pressed);
 	ai_mode_toggle_button.pressed.connect(_on_ai_mode_toggle_button_pressed);
 	close_button.pressed.connect(_on_close_button_pressed);
@@ -52,6 +57,11 @@ func _render_options():
 		sound_toggle_button.button_pressed=true;
 	else:
 		sound_toggle_button.button_pressed=false;
+	
+	if (GameDataManager.CONFIGDATA.blocking_on):
+		blocking_toggle_button.button_pressed=true;
+	else:
+		blocking_toggle_button.button_pressed=false;
 	_update_sound_state_text();
 
 func _to_percentage(val:float):
@@ -79,6 +89,12 @@ func _on_sound_toggle_button_pressed():
 	else:
 		GameDataManager.CONFIGDATA.sound_on=false;
 	_update_sound_state_text();
+
+func _on_blocking_toggle_button_pressed():
+	if (blocking_toggle_button.is_pressed()):
+		GameDataManager.CONFIGDATA.blocking_on=true;
+	else:
+		GameDataManager.CONFIGDATA.blocking_on=false;
 
 func _update_sound_state_text():
 	if (GameDataManager.CONFIGDATA.sound_on):

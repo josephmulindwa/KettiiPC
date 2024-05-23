@@ -4,7 +4,7 @@ extends Node;
 
 var TUTORIALS_LINK="https://www.youtube.com/playlist?list=PLu3k_6Bw6bciLG3MK3viHqTpCwU24Nm3x";
 
-var  VERSION_NUMBER = "1.03"; # accessed at Exports>version
+var  VERSION_NUMBER = "1.04"; # accessed at Exports>version
 enum PLAYER_TYPE {NONE, CPU, HUMAN, WEB};
 enum PIECE_TYPE {RIM, CONE};
 enum AI_MODE {SIMPLE, SMART};
@@ -45,7 +45,7 @@ var GAME_COMPLETED=false;
 var SELF_COMPLETED=false;
 var PLACING_PIECE=false;
 var EXITED_BY_AD=false;
-var AD_RUNNING=false;
+var FULL_SCREEN_AD_RUNNING=false; # indicates full screen ad showing
 var PANEL_ACTIVE=false; # indicates (any) panel being active; used by back button
 var SELF_PLAYER_ID:int=0; #id of player chosen to play as
 

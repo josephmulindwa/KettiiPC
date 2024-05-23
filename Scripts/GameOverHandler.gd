@@ -46,9 +46,20 @@ func _show_panel_game_over():
 	if (GameDataManager.SAVEDATA.number_players==1):
 		player_disconnected_indicator.visible=true;
 		disconnect_visibility_timer.start();
-		# play a different sound
+		Events.emit_signal("play_sound", "GAME_ENDED");
 	else:
-		Events.emit_signal("play_sound", "GAME_OVER");
+		# find if self player was last or not
+		var finished_last:bool=false;
+		if (GameDataManager.SAVEDATA.active_game_mode in [Parameter.GAME_MODE.CPU, Parameter.GAME_MODE.ONLINE]):
+			for i in range(len(completion_listing)):
+				if (completion_listing[i]==Parameter.SELF_PLAYER_ID):
+					if (i==(GameDataManager.SAVEDATA.number_players-1)):
+						finished_last=true;
+					break;
+		if (finished_last):
+			Events.emit_signal("play_sound", "GAME_ENDED");
+		else:
+			Events.emit_signal("play_sound", "GAME_OVER");
 	_fill_player_list();
 	self.visible=true;
 	
